@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import React from 'react'
 
-import { postUser, postSession, deleteSession } from './util/session_api_util'
+import { postUser, postSession, deleteSession } from './utils/session_api_util'
 import {signup, login, logout} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             },
             session: {
-                currentUser: window.currentUser.id
+                currentUser:window.currentUser     //window.currentUser.id
             }
         };
         store = configureStore(preloadedState);

@@ -1,9 +1,14 @@
+
+
+//takes in a user obj 
+//returns ajax request
+
 //signUp
 export const postUser = user => (
     $.ajax({
         method: 'POST',
         url: '/api/users',
-        data: { user },
+        data: { user }, //data nested on key word of user 
     })
 );
 
