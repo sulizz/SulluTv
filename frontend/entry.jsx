@@ -45,4 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Test
-// user = {username: 'suliztest1', email: 'sulizTest1@gmail.com', password: "helloSuliz", Profile_pic_url:'55.google.com'}
+// user = {username: 'suliztest100', email: 'sulizTest100@gmail.com', password: "helloSuliz", Profile_pic_url:'55.google.com'}

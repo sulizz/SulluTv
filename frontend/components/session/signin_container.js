@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { login } from '../../actions/session_actions'
+import { login, clearErrors } from '../../actions/session_actions'
 import sessionForm from './session_form'
 import { Link } from 'react-router-dom'
 
@@ -12,15 +12,18 @@ import { Link } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => ({
     // key: selector(state)
+    errors: state.errors.session,
     formType: "Sign In",
-    link: <Link to="/signup">Sign Up</Link>
+    link: <Link to="/signup">Create account</Link>
 })
 
 
 //return POJ with sign up as key.  
 const mapDispatchToProps = dispatch => ({
     //action_name: () => dispatch(action_name())
-    processForm: formUser => dispatch(login(formUser))
+    processForm: formUser => dispatch(login(formUser)),
+    processDemo: formUser => dispatch(login(formUser)),
+    clearErrors: () => dispatch(clearErrors())
 })
 
 //give us function called sign up inside our sign up presentational component 

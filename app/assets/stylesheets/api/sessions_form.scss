@@ -1,0 +1,124 @@
+//Sign in From.
+.session-form {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 500px;
+    padding: 40px;
+    background: rgba(0,0,0,0);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    
+}
+
+//signUp
+.session-form h2 {
+    
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    font-weight: Bold;
+    letter-spacing: 1px;
+    line-height: 1.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
+    margin-top: 10px;
+
+}
+//to continue to SulluTV
+.session-form h3 {
+    margin: 0 0 20px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.session-form .input-box {
+    position: relative;
+}
+
+.session-form .input-box .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    transition: .5s;
+    pointer-events: none;
+}
+.session-form .input-box input:focus ~ label
+ {
+    top: -18px;
+    left: -10px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.session-form .input-box input {
+    width: 95%;
+    padding: 10px 0;
+    font-size: 16px;
+     
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.session-form button{
+    
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: lightblue;
+    border-radius: 7px;
+    text-align: Center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 40px;
+    margin-right: 55px;
+
+ }
+
+ .session-form h4 {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #0060B6;
+    border-radius: 7px;
+    padding: 10px 20px;
+    background-color: lightblue;
+    width: 100px;
+    color: inherit;
+    text-decoration: none;
+    color: white;
+ }
+
+
+.session-form h5 {
+    position: relative;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: lightblue;
+    border-radius: 7px;
+    text-align: Center;
+    color: white;
+    position: absolute;
+    margin-bottom: 40px;
+    margin-right: 55px;
+    margin-left: 175px;
+}

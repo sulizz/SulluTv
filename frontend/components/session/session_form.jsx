@@ -11,6 +11,12 @@ class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.clearErrors();
     }
 
     //handle inputting for username, email and password
@@ -20,6 +26,26 @@ class SessionForm extends React.Component {
             //e is event obj from event handler
             this.setState({[type]:  e.target.value}) 
         }
+    }
+
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        this.props.processDemo({
+            username: 'DemoUser101',
+            email: 'DemoUser101',
+            password: 'DemoUser101'
+        })
+        .then(() => this.props.history.push('/')) //==> redirect on sucessfull login or signup 
+    } 
+
+    renderErrors() {
+        return (
+            this.props.errors.map(error => (
+                <li key={error}>
+                    {error}
+                </li>
+            ))
+        )
     }
 
     handleSubmit (e) {
@@ -32,35 +58,57 @@ class SessionForm extends React.Component {
         return (
             <div className= "session-form">
                 <h2>{this.props.formType}</h2>
-                <h4>{this.props.link}</h4>
+                <h3> to continue to SulluTV</h3>
+                <ul>
+                    {this.renderErrors()}
+                </ul>
                 <form>
-                    <label>Username:
-                        <input
-                            type= 'text'
-                            value = {this.state.username}
-                            onChange={this.handleInput('username')}
-                        />
-                    </label>
-                    <label>Email:
-                        <input
-                            type= 'text'
-                            value = {this.state.email}
-                            onChange={this.handleInput('email')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                            type= 'password'
-                            value = {this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
+                    <div className= 'input-box'>
+                            <input
+                                // placeholder="Username"
+                                type= 'text'
+                                value = {this.state.username}
+                                onChange={this.handleInput('username')}
+                            />
+                        <label className ='label'>Username
+                        </label>
+                    </div>
+                    <br />
+                    <div className='input-box'>
+                            <input
+                                // placeholder="Email"
+                                type= 'text'
+                                value = {this.state.email}
+                                onChange={this.handleInput('email')}
+                            />
+                        <label className='label'>Email
+                        </label>
+                    </div>
+                    <br />
+                    <div className= 'input-box'>
+                            <input
+                                // placeholder="Password"
+                                type= 'password'
+                                value = {this.state.password}
+                                onChange={this.handleInput('password')}
+                            />
+                        <label className='label'>Password
+                        </label>
+                    </div>
+                    <br />
+                    
                     <button onClick={this.handleSubmit}>{this.props.formType}</button>
                 </form>
+
+                <h5 onClick={this.handleDemoSubmit}>Demo User</h5>
+
+
+                <h4> {this.props.link} </h4>
             </div>
         )
     }
 };
+
 
 export default SessionForm;
 
