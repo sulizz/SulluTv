@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SignUp extends React.Component {
+class SessionForm extends React.Component {
 
     constructor (props) {
         super(props)
@@ -24,14 +24,15 @@ class SignUp extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
-        this.props.signup(this.state)
-        .then( ()=> this.props.history.push('/')) //==> redirect on sucessfull login 
+        this.props.processForm(this.state)
+        .then( ()=> this.props.history.push('/')) //==> redirect on sucessfull login or signup 
     } 
 
     render () {
         return (
             <div className= "session-form">
-                <h2>Sign Up</h2>
+                <h2>{this.props.formType}</h2>
+                <h4>{this.props.link}</h4>
                 <form>
                     <label>Username:
                         <input
@@ -54,12 +55,12 @@ class SignUp extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button onClick={this.handleSubmit}>{this.props.formType}</button>
                 </form>
             </div>
         )
     }
 };
 
-export default SignUp;
+export default SessionForm;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {connect} from 'react-redux';
 import TopHeader from './top_header'
 import {logout } from '../../actions/session_actions'

@@ -2,7 +2,7 @@
 import ReactDOM from 'react-dom'; 
 import configureStore from './store/store';
 import Root from './components/root';
-import React from 'react'
+import React from 'react';
 
 import { postUser, postSession, deleteSession } from './utils/session_api_util'
 import {signup, login, logout} from './actions/session_actions'

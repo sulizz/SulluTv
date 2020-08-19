@@ -1,3 +1,40 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//top_header.jsx
+.header-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background: red;
+    justify-content: space-between;
+    padding: 16px;
+
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+}
+
+.left-container > .logo {
+ margin-left: 10px;
+}
+
+.center-container {
+    display: flex;
+    width: 40%;
+    border: 1px solid black;
+}
+
+.center-container > input {
+    flex: 1;
+    height: 30px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

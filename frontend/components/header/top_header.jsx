@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link } from 'react-router-dom'
+import {Link } from 'react-router-dom';
+import MenuIcon from '@material-ui/icons/Menu';
 
 export default ({currentUser, logout}) => {
 
@@ -12,14 +13,22 @@ export default ({currentUser, logout}) => {
     : (
         <div>
             <Link className="btn" to="/signUp">Sign Up</Link> 
-            <Link className="btn" to="/LogIn">Log In</Link> 
+            <Link className="btn" to="/login">Log In</Link> 
         </div>
     );
 
     return (
         <header className='header-bar'>
-            <h1 className='logo'>SulluTV</h1>
-            <div>
+            <div className= 'left-container'>
+                <MenuIcon />
+                <h1 className='logo'>SulluTV</h1>
+            </div>
+
+            <div className='center-container'>
+                <input type='text' />
+            </div>
+
+            <div className='right-container'>
                 {display}
             </div>
         </header>
