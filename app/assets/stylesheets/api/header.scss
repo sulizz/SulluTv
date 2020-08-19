@@ -63,16 +63,23 @@
 }
 
 
-//
+//Hovered component.
 .hovered {
     margin-top: 25px;
-    padding: 5px;
+    padding: 10px; 
     box-shadow: 0 15px 25px rgba(0,0,0,0.9);
+    margin-left: -70px;
 }
 
-.hovered h1 
+.hovered h1 {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    width: 150px;
+
+}
 
 .hovered button {
+    width: 150px;
     border: none;
     outline: none;
     padding: 10px 20px;
@@ -81,7 +88,7 @@
     text-align: Center;
     color: white;
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-
+    margin-top: 10px;
 }
 
 
