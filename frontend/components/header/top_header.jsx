@@ -21,10 +21,10 @@ export default ({currentUser, logout}) => {
         
     ) 
     : (
-        <div>
-            {/* <Link className="btn" to="/signUp">Sign Up</Link> */}
+        <div className ='login-btn'>
+
             <i className="far fa-user-circle"></i>
-                <Link className="btn" to="/login"> Log In</Link> 
+            <Link className="btn" to="/login"> Log In</Link> 
                 
         </div>
     );
@@ -40,6 +40,7 @@ export default ({currentUser, logout}) => {
                 
                 <input placeholder="Search" type="text"
                  type='text' />
+                 
             </div>
 
             <div>

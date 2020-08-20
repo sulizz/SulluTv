@@ -1,0 +1,32 @@
+
+.hovered {
+    margin-top: 25px;
+    padding: 10px; 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.9);
+    margin-left: -70px;
+    align-items: center;
+}
+
+.hovered h1 {
+    border-bottom: 1px solid black;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    padding: 10px;
+    width: 150px;
+
+}
+
+.hovered button {
+    width: 150px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    Background-color: red; 
+    text-align: Center;
+    color: white;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    margin-top: 10px;
+    align-items: center;
+}
+
+

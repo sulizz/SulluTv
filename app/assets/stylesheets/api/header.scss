@@ -19,14 +19,16 @@
 }
 
 .left-container > .logo {
- margin-left: 10px;
+ margin-left: 25px;
  font-size: 18px;
+ 
 }
+
 
 .center-container {
     display: flex;
     width: 40%;
-    border: 1px solid black;
+    border: 1px solid silver;
 }
 
 .center-container > input {
@@ -43,7 +45,7 @@
 
 .right-container {
     padding: 10px;
-    border:1px solid blue;
+    border:1px solid white;
     position: relative;
 }
 
@@ -52,47 +54,25 @@
 }
 
 .active, .right-container:hover {
-    background: lightgreen;
+    background: silver;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .right-container:hover .drop-down {
     display: block;
     position: absolute;
+    transform: translate(0px, 9px);
    
 }
 
-
-//Hovered component.
-.hovered {
-    margin-top: 25px;
-    padding: 10px; 
-    box-shadow: 0 15px 25px rgba(0,0,0,0.9);
-    margin-left: -70px;
+.login-btn {
+     margin-right: 10px;
+     font-size: 18px;
+     border: 1px solid white;
+     padding: 12px;
+     font-family: Arial, Helvetica, sans-serif;
 }
-
-.hovered h1 {
-    border-bottom: 1px solid black;
-    padding: 10px;
-    width: 150px;
-
-}
-
-.hovered button {
-    width: 150px;
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    Background-color: red; 
-    text-align: Center;
-    color: white;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-    margin-top: 10px;
-}
-
-
-
 
 
 
