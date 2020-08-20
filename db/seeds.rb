@@ -8,9 +8,9 @@
 
 # User.delete_all
 
-# u1 = User.create!(
-#     username: 'User1'
-#     email: 'user1@gmail.com'
-#     profile_pic_url: 'nothere.com'
+u1 = User.create!(
+            username: 'DemoUser101',
+            email: 'DemoUser101',
+            password: 'DemoUser101'
+)
 
-# )
