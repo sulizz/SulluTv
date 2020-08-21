@@ -48,6 +48,10 @@ export const login = formUser => dispatch => postSession(formUser)
     .then(user => dispatch(receiveCurrentUser(user)))
     .fail(err => dispatch(receiveErrors(err.responseJSON)));
 
+// export const loginDemo = formUser => dispatch => getDemoUser(formUser)
+//     .then(user => dispatch(receiveCurrentUser(user)))
+//     .fail(err => dispatch(receiveErrors(err.responseJSON)));
+    
 //upon sucessful deletetion, it will call a callback which dispatches logoutCurrentUser.
 export const logout = () => dispatch => deleteSession()
     .then(() => dispatch(logoutCurrentUser()))

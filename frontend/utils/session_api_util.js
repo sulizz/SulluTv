@@ -21,6 +21,14 @@ export const postSession = user => (
     })
 );
 
+//login demo user 
+export const getDemoUser = (userid) => (
+    $.ajax({
+        method:'GET',
+        url:`/api/users/28`
+    })
+)
+
 //logOut
 export const deleteSession = () => (
     $.ajax({

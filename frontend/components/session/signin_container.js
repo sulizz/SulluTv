@@ -22,8 +22,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     //action_name: () => dispatch(action_name())
     processForm: formUser => dispatch(login(formUser)),
-    processDemo: formUser => dispatch(login(formUser)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    processDemo: formUser => dispatch(login(formUser))
 })
 
 //give us function called sign up inside our sign up presentational component 

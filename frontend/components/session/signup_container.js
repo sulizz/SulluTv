@@ -21,8 +21,8 @@ const mapStateToProps = (state, ownProps) => ({
 //return POJ with sign up as key.  
 const mapDispatchToProps = dispatch => ({
     processForm: formUser => dispatch(signup(formUser)),
-    processDemo: formUser => dispatch(login(formUser)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    processDemo: formUser => dispatch(login(formUser))
 })
 
 //give us function called sign up inside our sign up presentational component 

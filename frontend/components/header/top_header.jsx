@@ -32,7 +32,9 @@ export default ({currentUser, logout}) => {
     return (
         <header className='header-bar'>
             <div className= 'left-container'>
-                <MenuIcon />
+                <span className ='menu-icon'> 
+                    <MenuIcon /> 
+                </span>
                 <Link className='logo' to="/">SulluTV</Link>
             </div>
 
@@ -43,7 +45,8 @@ export default ({currentUser, logout}) => {
                  
             </div>
 
-            <div>
+            <div className='login-right'>
+                {/* <i class="fas fa-ellipsis-v"></i> */}
                 {display}
             </div>
         </header>

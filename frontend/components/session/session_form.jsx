@@ -59,9 +59,11 @@ class SessionForm extends React.Component {
             <div className= "session-form">
                 <h2>{this.props.formType}</h2>
                 <h3> to continue to SulluTV</h3>
-                <ul>
+                
+                <ul className = "errors">
                     {this.renderErrors()}
                 </ul>
+
                 <form>
                     <div className= 'input-box'>
                             <input
