@@ -14,3 +14,5 @@ u1 = User.create!(
             password: 'DemoUser101'
 )
 
+Video.delete_all
+

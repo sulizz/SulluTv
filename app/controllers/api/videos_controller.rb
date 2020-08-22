@@ -10,13 +10,15 @@ class Api::VideosController < ApplicationController
     def show
     end
 
-    def create
+    def create†
+        debugger
         @video = Video.new(video_params)
 
         if @video.save
-            render :show
+            render json: :create
         else 
             render json: @video.errors.full_messages, status: 401
+        end
     end
 
     def update
@@ -34,13 +36,14 @@ class Api::VideosController < ApplicationController
     def destroy
         @video = Video.find(params[:id])
         @video.destroy
-        render :show //render the show page? å
+        render :show 
     end
-
 
     private
-    
+
     def video_params 
-        params.require(:video).permit(:title, :description, :video_url, :views, :user_id)
+        params.require(:video).permit(:title, :description, :views, :user_id) 
     end
+    # :video passed down from form
+
 end
