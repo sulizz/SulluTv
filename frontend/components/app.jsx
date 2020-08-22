@@ -6,18 +6,18 @@ import SignInFormContainer from './session/signin_container'
 import TopHeader from './header/top_header_container'
 
 import VideoIndexContainer from './Video/video_index/video_index_container'
-import VideoDisplay from './Main/video_display';
-
+import VideoFormContainer from './Video/video_form/video_form_container'
 
 
 const App = () => (
     <div>
         <div>
-            {/* <Route path ='/' component={TopHeader}/> */}
-            {/* <Route path='/' component={VideoDisplay} /> */}
+            <Route path ='/' component={TopHeader}/>
             <Route path='/' component={VideoIndexContainer} />
-            {/* <AuthRoute path='/signup' component={SignUpContainer} />
-            <AuthRoute path="/login" component={SignInFormContainer} /> */}
+            <Route path='/upload' component={VideoFormContainer}/>
+
+            <AuthRoute path='/signup' component={SignUpContainer} />
+            <AuthRoute path="/login" component={SignInFormContainer} /> 
         </div>
 
     </div>
