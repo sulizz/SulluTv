@@ -8,9 +8,7 @@ class VideoIndex extends React.Component {
     }
 
     render() {
-        if !video {
-            return null;
-        }
+
         console.log(videos);
         const videos = this.props.videos.map(video => (
             <VideoIndexItem video={video} key={video.id} />

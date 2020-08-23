@@ -6,11 +6,13 @@
     transform: translate(-50%, -50%); 
     width: 500px;
     padding: 40px;
-    background: rgba(0,0,0,0);
+    background: rgb(255,255,255);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,0.5);
     border-radius: 10px;
-    
+    border: 2px solid orange;
+    z-index: 3;
+
 }
 
 //signUp
@@ -63,8 +65,8 @@
     background: transparent;
     font-family: Arial, Helvetica, sans-serif;
 }
-.session-form .input-box input:focus ~ label,
-.session-form .input-box input:valid ~ label
+.session-form .input-box input:focus ~ label
+// .session-form .input-box input:valid ~ label
  {
     top: -18px;
     left: -10px;

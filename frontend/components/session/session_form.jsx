@@ -72,8 +72,8 @@ class SessionForm extends React.Component {
                                 value = {this.state.username}
                                 onChange={this.handleInput('username')}
                             />
-                        <label className ='label'>Username
-                        </label>
+                        {this.state.username.length === 0 && <label className ='label'>Username
+                        </label>}
                     </div>
                     <br />
                     <div className='input-box'>
@@ -83,8 +83,8 @@ class SessionForm extends React.Component {
                                 value = {this.state.email}
                                 onChange={this.handleInput('email')}
                             />
-                        <label className='label'>Email
-                        </label>
+                        {this.state.email.length === 0 && <label className='label'>Email
+                        </label>}
                     </div>
                     <br />
                     <div className= 'input-box'>
@@ -94,8 +94,8 @@ class SessionForm extends React.Component {
                                 value = {this.state.password}
                                 onChange={this.handleInput('password')}
                             />
-                        <label className='label'>Password
-                        </label>
+                        {this.state.password.length === 0 && <label className='label'>Password
+                        </label>}
                     </div>
                     <br />
                     
