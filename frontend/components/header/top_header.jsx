@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import VideoCallIcon from '@material-ui/icons/VideoCall'
 import DropDown from './drop-down-container'
+
 
 export default ({currentUser, logout}) => {
 
@@ -10,7 +13,7 @@ export default ({currentUser, logout}) => {
         <div className='right-container'>
             <div>
                 <header className= 'userProfile'>
-                    <p> {currentUser.username}</p>
+                    <p> {currentUser.username[0]}</p>
                 </header>
                 <section className = 'drop-down'>
                     <DropDown />
@@ -32,9 +35,7 @@ export default ({currentUser, logout}) => {
     return (
         <header className='header-bar'>
             <div className= 'left-container'>
-                <span className ='menu-icon'> 
                     <MenuIcon /> 
-                </span>
                 <Link className='logo' to="/">SulluTV</Link>
             </div>
 
@@ -42,12 +43,13 @@ export default ({currentUser, logout}) => {
                 
                 <input placeholder="Search" type="text"
                  type='text' />
-                 
+                <SearchIcon className='search-icon'/>
             </div>
 
-            <div className='login-right'>
-                {/* <i class="fas fa-ellipsis-v"></i> */}
-                {display}
+            <div className='right-container'>
+                <VideoCallIcon className= 'video-logo'/>
+                
+                <span className ='user-logo'> {display} </span>
             </div>
         </header>
     );

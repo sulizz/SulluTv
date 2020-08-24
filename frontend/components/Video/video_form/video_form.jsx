@@ -40,9 +40,10 @@ class VideoForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className= 'form-container'> 
 
-                <form onSubmit= {this.handleSubmit} >
+                <form className= 'from-items'onSubmit= {this.handleSubmit} >
+                    
                     <label> Title</label>
                     <input
                         type='text'

@@ -11,6 +11,11 @@
     justify-content: space-between;
     padding: 16px;
     color: black;
+    border-bottom: 1px solid grey;
+    position: sticky;
+    top:0;
+    z-index: 100;
+    background-color: red;
 }
 
 .left-container {
@@ -19,21 +24,35 @@
 }
 
 .left-container > .logo {
- margin-left: 25px;
+ margin-left: 30px;
  font-size: 18px;
- 
 }
 
 
 .center-container {
     display: flex;
-    width: 40%;
-    border: 1px solid silver;
+    align-items: center;
+    width: 45%;
+    // border: 0.1px solid white;
+    background: grey;
 }
 
+
 .center-container > input {
-    flex: 1;
+    flex: 100%;
     height: 30px;
+    border: none;
+    outline: none;
+}
+
+.search-icon {
+    padding-right: 10px;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 6px;
+    border: none;
 }
 
 .right-container {
@@ -44,20 +63,11 @@
 }
 
 .right-container {
+    display: flex;
     padding: 10px;
-    border:1px solid white;
     position: relative;
 }
 
-.right-container .drop-down {
-    display: none;
-}
-
-.active, .right-container:hover {
-    background: silver;
-    border-radius: 3px;
-    cursor: pointer;
-}
 
 .right-container:hover .drop-down {
     display: block;
@@ -66,6 +76,9 @@
    
 }
 
+.right-container .drop-down {
+    display: none;
+}
 
 .login-btn {
      margin-right: 10px;
@@ -75,11 +88,16 @@
      font-family: Arial, Helvetica, sans-serif;
 }
 
-.menu-icon {
-    cursor: pointer;
-    margin-top: 8px;;
+.user-logo {
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-left: 10px;
+    background-color: grey;
 }
 
-
+.active, .user-logo:hover {
+    border-radius: 3px;
+    cursor: pointer;
+}
 
 
