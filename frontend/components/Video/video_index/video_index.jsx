@@ -15,7 +15,7 @@ class VideoIndex extends React.Component {
         ));
         
         return (
-            <ul className="maincontent">
+            <ul className="video-main">
                 {videos}
             </ul>
         )

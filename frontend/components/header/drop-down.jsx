@@ -11,8 +11,6 @@ class DropDown extends React.Component {
         return (
             <div className = 'hovered'> 
                 <Link to='/upload'>Upload</Link>
-                <h1> Something </h1>
-                <h1>Something</h1>
                 <button onClick={this.props.logout}>Log Out</button>
             </div>
         ) 

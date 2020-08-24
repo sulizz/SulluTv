@@ -1,0 +1,48 @@
+//from navBar
+.nav-bar {
+    flex: 0.12;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    width: 100%;
+}
+
+//navbar items
+.nav-bar-items { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    // background-color: red;
+    padding: 10px 25px;
+}
+.nav-bar-items > .home-icon {
+    left: 0;
+    color: grey;
+}
+.nav-bar-items > .whatshot-icon {
+    color: grey;
+}
+
+.nav-bar-items > h1 {
+    flex:1;
+    margin-left: 25px;
+}
+
+.nav-bar-items:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.nav-bar-items:hover > .home-icon {
+    color: red;
+}
+.nav-bar-items:hover > .whatshot-icon {
+    color: red;
+}
+.nav-bar-items:hover > h1 {
+    font-weight: bold;
+}
+
+
+

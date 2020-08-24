@@ -8,7 +8,7 @@ const VideoIndexItem = ({ video }) => {
                 <li> {video.description} </li>
                 <li> {video.views} </li>
                 <li>
-                    <video autoPlay controls>
+                    <video className= 'video-url' width='300' height='300' autoPlay ={false} controls>
                         <source src={video.videoUrl} type='video/mp4' />
                     </video>
 

@@ -1,15 +1,12 @@
 import React from 'react'
-
+import NavBarItems from './nav_bar_items'
 class NavBar extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render () {
         return (
 
-            <div className='side-bar'>
-                <h1>side bar</h1>
+            <div className='nav-bar'>
+                <NavBarItems />
             </div>
 
         )
