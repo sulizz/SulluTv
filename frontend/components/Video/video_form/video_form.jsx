@@ -8,11 +8,13 @@ class VideoForm extends React.Component {
         this.state = {
             title: '',
             description: '',
-            file: null
+            file: null,
+            thumbnail: null
         }
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleFileChange = this.handleFileChange.bind(this);
+        this.handleThumbnailChange = this.handleThumbnailChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -27,15 +29,20 @@ class VideoForm extends React.Component {
         this.setState({ file: e.currentTarget.files[0] })
     }
 
+    handleThumbnailChange(e) {
+        this.setState({ thumbnail: e.currentTarget.files[0]})
+    }
+
     handleSubmit(e) {
         console.log(this.state)
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
         formData.append('video[video]', this.state.file);
+        formData.append('video[photo]', this.state.thumbnail);
         this.props.uploadNewVideo(formData);
     }
-    // params.require(: video).permit(: title, : description, : file) 
+    // params.require(: video).permit(: title, : description, : file, ) 
 
 
     render() {
@@ -50,15 +57,24 @@ class VideoForm extends React.Component {
                         value = {this.state.title}
                         onChange= {this.handleTitleChange}
                     />
+                    <br></br>
                     <label> description</label>
                     <input
                         type='text'
                         value={this.state.description}
                         onChange={this.handleDescriptionChange}
                     />
+                    <br></br>
+                    <label>Video File</label>
                     <input
                         type='file'
                         onChange={this.handleFileChange}
+                    />
+                    <br></br>
+                    <label>Thumbnail</label>
+                    <input
+                        type='file'
+                        onChange={this.handleThumbnailChange}
                     />
                     <button>Upload a Video</button>
                 </form>

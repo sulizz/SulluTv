@@ -4,6 +4,7 @@
         json.extract! video.user, :username
         json.uploader_id video.user.id
         json.videoUrl url_for(video.video)
+        json.photoUrl url_for(video.photo)
     end
 end
 
