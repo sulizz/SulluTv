@@ -46,10 +46,18 @@ export default ({currentUser, logout}) => {
                 <SearchIcon className='search-icon'/>
             </div>
 
-            <div className='right-container'>
+            <div className = 'video-icon'>
                 <VideoCallIcon className= 'video-logo'/>
+                    <div className = 'upload-link'>
+                        <Link to='/upload'>Upload</Link>
+                    </div>
+            </div>
+
+            <div className='right-container'>
                 
-                <span className ='user-logo'> {display} </span>
+                <span className ='user-logo'> 
+                    <h1>  {display}  </h1>
+                </span>
             </div>
         </header>
     );

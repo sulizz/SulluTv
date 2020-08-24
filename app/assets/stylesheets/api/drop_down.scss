@@ -6,6 +6,7 @@
     margin-left: -150px;
     align-items: center;
     z-index: 5;
+    
 }
 
 .hovered h1 {
@@ -21,10 +22,9 @@
     outline: none;
     padding: 10px 20px;
     cursor: pointer;
-    Background-color: grey; 
     text-align: Center;
     color: white;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    // box-shadow: 0 15px 25px rgba(0,0,0,0.5);
     margin-top: 10px;
     align-items: center;
     justify-content: center;

@@ -32,7 +32,6 @@ export const clearErrors = () => ({
 
 //thunk action 
 export const requestAllVideos = () => dispatch => {
-    debugger
     return VideoAPIUtil.fetchAllvideos()
         .then(videos => dispatch({
             type: RECEIVE_VIDEOS,

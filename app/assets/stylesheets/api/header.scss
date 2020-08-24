@@ -11,7 +11,6 @@
     justify-content: space-between;
     padding: 16px;
     color: black;
-    border-bottom: 1px solid grey;
     position: sticky;
     top:0;
     z-index: 100;
@@ -68,19 +67,19 @@
 }
 
 
-.right-container:hover .drop-down {
-    display: block;
-    position: absolute;
-    transform: translate(0px, 9px);
-   
-}
-
 .right-container .drop-down {
     display: none;
 }
+.right-container:hover .drop-down {
+    display: block;
+    position: absolute;
+   
+   
+}
+
 
 .login-btn {
-     font-size: 18px;
+     font-size: px;
      color: blue;
      border: 1px solid blue;
      padding: 12px;
@@ -88,16 +87,52 @@
      font-family: Arial, Helvetica, sans-serif;
 }
 
-.user-logo {
+.right-container > .user-logo {
+
+    box-sizing: border-box;
     border-radius: 50%;
     border: 1px solid blue;
-    margin-left: 10px;
+    margin-left: 40px;
     background-color: transparent;
     cursor: pointer;
+    color: red;
+}
+
+.userProfile{
+    font-size: 20px;
+    font-style: bold;
+    font-family: sans-serif;
 }
 
 .active, .user-logo:hover {
     cursor: pointer;
 }
 
+.video-logo:hover {
+    cursor: pointer;
+}
 
+.video-icon {
+    position: relative;
+    margin-left: 200px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.video-icon > .upload-link {
+    position: absolute;
+    display: none;
+}
+
+.video-icon:hover .upload-link {
+    display: block;
+    position: absolute;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    color: blue;
+    border: 1px solid grey;
+    align-items: center;
+    justify-content: center;
+}

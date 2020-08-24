@@ -1,5 +1,5 @@
 import React from 'react';
-import {AuthRoute} from '../utils/route_utils'
+import { AuthRoute, ProtectedRoute} from '../utils/route_utils'
 import { Route, Switch } from 'react-router-dom';
 import SignUpContainer from './session/signup_container'
 import SignInFormContainer from './session/signin_container'
@@ -13,10 +13,10 @@ const App = () => (
     <div>
         <div>
             <Route path ='/' component={TopHeader}/>
-            <Route path='/' component={MainDisplay}/>
+            <Route exact path='/' component={MainDisplay}/>
             <Switch>
 
-                <Route path='/upload' component={VideoFormContainer}/>
+                <ProtectedRoute path='/upload' component={VideoFormContainer}/>
                 
 
                 <AuthRoute path="/login" component={SignInFormContainer} /> 
@@ -24,7 +24,7 @@ const App = () => (
                 {/* <Route path='/' component={VideoIndexContainer} /> */}
             </Switch>
             
-
+        
         </div>
 
     </div>
