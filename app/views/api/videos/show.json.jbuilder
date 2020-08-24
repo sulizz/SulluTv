@@ -9,6 +9,6 @@ json.videoUrl url_for(@video.video)
 #                 description --
 #                 views -- 
 #                 thumbnail_url --
-#                 user -- 
+#                 user --  n
 #              }
 # }
