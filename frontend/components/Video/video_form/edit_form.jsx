@@ -1,19 +1,18 @@
 import React from 'react';
+import video_form_container from './video_form_container';
 
-
-class VideoForm extends React.Component {
+class EditForm extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
             title: '',
             description: '',
-            file: null,
             thumbnail: null
         }
+
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
         this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleFileChange = this.handleFileChange.bind(this);
         this.handleThumbnailChange = this.handleThumbnailChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -22,66 +21,70 @@ class VideoForm extends React.Component {
         this.setState({ title: e.currentTarget.value })
     }
     handleDescriptionChange(e) {
-        this.setState({ description: e.currentTarget.value})
-    }
-
-    handleFileChange(e) {
-        this.setState({ file: e.currentTarget.files[0] })
+        this.setState({ description: e.currentTarget.value })
     }
 
     handleThumbnailChange(e) {
-        this.setState({ thumbnail: e.currentTarget.files[0]})
+        this.setState({ thumbnail: e.currentTarget.files[0] })
     }
 
     handleSubmit(e) {
+        e.preventDefault();
         const formData = new FormData();
+        // formData.append('video[id]', this.props.video.id);
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
-        formData.append('video[video]', this.state.file);
         formData.append('video[photo]', this.state.thumbnail);
-        this.props.uploadNewVideo(formData);
-        // .then(() => this.props.history.push('/'));
+        this.props.editVideo(formData, this.props.video.id)
+            .then(() => this.props.history.push('/'));
     }
-    // params.require(: video).permit(: title, : description, : video, :photo )
+
+    // handleDeleteSubmit(e) {
+    //     e.preventDefault();
+
+    // }
+
+    // params.require(: video).permit(: title, : description, : photo)
 
 
-    render() {
+    render () {
         return (
-            <div className= 'form-container'> 
+            <>
+            {/* <h1>Currently Editing {this.props.video.title}</h1> */}
+            {/* <video controls>
+                <source src={this.props.video.videoUrl} type='video/mp4' />
+            </video> */}
+            
+            <div className='form-container'>
+                <form className='from-items' onSubmit={this.handleSubmit} >
 
-                <form className= 'from-items'onSubmit= {this.handleSubmit} >
-                    
                     <label> Title</label>
                     <input
                         type='text'
-                        value = {this.state.title}
-                        onChange= {this.handleTitleChange}
+                        value={this.state.title}
+                        onChange={this.handleTitleChange}
                     />
                     <br></br>
                     <label> description</label>
-                    <input
+                    <textarea
                         type='text'
                         value={this.state.description}
                         onChange={this.handleDescriptionChange}
                     />
-                    <br></br>
-                    <label>Video File</label>
-                    <input
-                        type='file'
-                        onChange={this.handleFileChange}
-                    />
+
                     <br></br>
                     <label>Thumbnail</label>
                     <input
                         type='file'
                         onChange={this.handleThumbnailChange}
                     />
-                    <button>Upload a Video</button>
+                    <button>Edit Video</button>
                 </form>
 
             </div>
+        </>
         )
     }
 }
 
-export default VideoForm;
+export default EditForm;

@@ -8,21 +8,20 @@ import TopHeader from './header/top_header_container'
 import VideoFormContainer from './Video/video_form/video_form_container'
 import MainDisplay from './Main/main_display'
 import VideoShowContainer from './Video/video_show/video_show_container'
-
+import EditFormContainer from './Video/video_form/edit_form_container'
 const App = () => (
     <div>
         <div>
             <Route path ='/' component={TopHeader}/>
             <Route exact path='/' component={MainDisplay}/>
-            <Route exact path='/videos/:videoId' component={VideoShowContainer}/>
             <Switch>
-
+                <Route exact path='/videos/:videoId' component={VideoShowContainer}/>
+                <Route exact path='/edit/:videoId' component={EditFormContainer}/>
                 <ProtectedRoute path='/upload' component={VideoFormContainer}/>
                 
 
                 <AuthRoute path="/login" component={SignInFormContainer} /> 
                 <AuthRoute path='/signup' component={SignUpContainer} />
-                {/* <Route path='/' component={VideoIndexContainer} /> */}
             </Switch>
             
         

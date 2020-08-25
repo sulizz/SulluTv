@@ -9,16 +9,19 @@ import VideoShow from './video_show';
 const mapStateToProps = (state, ownProps) => {
     //return { videos: Object.values(state.entities.video) }
     //get one video
-    // debugger
-    
-    let video = state.entities.video[ownProps.match.params.videoId]
 
-    return {video: video}
+    let video = state.entities.video[ownProps.match.params.videoId];
+    let currentUser = state.session.currentUser
+
+    return {
+        video: video,
+        currentUser: currentUser
+    }
 };
 
 const mapDispatchToProps = (dispatch) => ({
     requestVideo: (videoId) => dispatch(requestVideo(videoId)),
-    // requestAllVideos: () => dispatch(requestAllVideos())
+    requestAllVideos: () => dispatch(requestAllVideos())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoShow);

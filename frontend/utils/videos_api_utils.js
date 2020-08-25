@@ -21,13 +21,15 @@ export const createVideo = (video) => (
         processData: false
     })
 )
-export const updateVideo = (video) => (
-    $.ajax({
+export const updateVideo = (formData, videoId) => {
+    return $.ajax({
         method:'PATCH',
-        url:`api/videos/${video.id}`,
-        data: {video}
+        url: `api/videos/${videoId}`,
+        data: formData,
+        contentType: false,
+        processData: false
     })
-)
+}
 
 export const deleteVideo = (videoId) => (
     $.ajax({

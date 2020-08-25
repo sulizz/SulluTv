@@ -1,6 +1,7 @@
 class Api::VideosController < ApplicationController
 
     skip_before_action :verify_authenticity_token
+    # before_action :require_logged_in, only: [:create, :update, :destroy]
     def index
         @videos = Video.all
         render :index
@@ -8,6 +9,14 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
+        if @video
+            #increment views by 1 and save
+            @video.views += 1
+            @video.save
+            render :show
+        else
+            render nil, status: 404
+        end
     end
 
     def create
@@ -25,22 +34,28 @@ class Api::VideosController < ApplicationController
 
     def update
 
-        
-        @video = Video.find(video_params[:id])
+        @video = Video.find(params[:id])
 
-        if @video.update(video_params)
-            render :show
-        else
-            render json: @video.errors.full_messages, status: 401
+        if current_user.id == @video.user_id
+            if @video.update(edit_params)
+                render :show
+            else
+                render json: @video.errors.full_messages, status: 401
+            end
         end
     end
 
 
-
     def destroy
         @video = Video.find(params[:id])
-        @video.destroy
-        render :show 
+
+        if current_user.id == @video.user_id
+            @video.destroy
+            render :show 
+        else 
+            render json: @video.errors.full_messages, status: 401
+        end
+
     end
 
     private
@@ -50,5 +65,9 @@ class Api::VideosController < ApplicationController
     end
     # :video passed down from form
     #photo passed down from
+
+    def edit_params 
+        params.require(:video).permit(:title, :description, :photo)
+    end
 
 end
