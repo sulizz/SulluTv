@@ -8,5 +8,9 @@ class Video < ApplicationRecord
 
    has_one_attached :photo
 
+   has_many :likes
+        primary_key: :id,
+        foreign_key: :video_id,
+        class_name: :Like
 
 end

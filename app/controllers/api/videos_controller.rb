@@ -48,7 +48,7 @@ class Api::VideosController < ApplicationController
 
     def destroy
         @video = Video.find(params[:id])
-
+        debugger
         if current_user.id == @video.user_id
             @video.destroy
             render :show 

@@ -15,6 +15,7 @@ class EditForm extends React.Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleThumbnailChange = this.handleThumbnailChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDeleteSubmit = this.handleDeleteSubmit.bind(this);
     }
 
     handleTitleChange(e) {
@@ -39,10 +40,11 @@ class EditForm extends React.Component {
             .then(() => this.props.history.push('/'));
     }
 
-    // handleDeleteSubmit(e) {
-    //     e.preventDefault();
-
-    // }
+    handleDeleteSubmit(e) {
+        e.preventDefault();
+        this.props.deleteVideo(this.props.video.id)
+        .then(() => this.props.history.push('/'));
+    }
 
     // params.require(: video).permit(: title, : description, : photo)
 
@@ -50,10 +52,6 @@ class EditForm extends React.Component {
     render () {
         return (
             <>
-            {/* <h1>Currently Editing {this.props.video.title}</h1> */}
-            {/* <video controls>
-                <source src={this.props.video.videoUrl} type='video/mp4' />
-            </video> */}
             
             <div className='form-container'>
                 <form className='from-items' onSubmit={this.handleSubmit} >
@@ -80,7 +78,7 @@ class EditForm extends React.Component {
                     />
                     <button>Edit Video</button>
                 </form>
-
+                <button onClick={this.handleDeleteSubmit}>Delete Video</button>
             </div>
         </>
         )
