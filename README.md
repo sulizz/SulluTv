@@ -22,6 +22,9 @@ SulluTV is a personal project by Suliz Basnet
 #### Add comments in videos
   * Logged in users can comment in any video
   
+### Project Design 
+  * [DataBase schema](https://github.com/sulizz/SulluTv/wiki/Database-Schema)
+  
 ### Upcomming features
   * Users can search for a title for a video
   * Users can have their own channels and see all the videos they uploaded 
