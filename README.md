@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to SulluTV, a YouTube clone. https://sullutv.herokuapp.com/
 
-Things you may want to cover:
+SulluTv is a web application inspired by Youtube where users can upload their own videos, edit their uploaded videos and comment on other videos. It is built with ruby on rails on the backend and React Redux on the front end
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+SulluTV is a personal project by Suliz Basnet
