@@ -40,22 +40,22 @@ class CommentIndex extends React.Component {
         ))
 
         return (
-            <div>
-                <h1>Comment Here</h1> 
+            <div className='comments-all'>
                 
-                <form onSubmit= {this.handleSubmit}>
+                <span className='comments-numbers'>{this.props.comments.length} Comments</span>
+                <form onSubmit={this.handleSubmit} className='comments-form'>
                     <textarea 
                         type='text'
+                        placeholder='Comments here...'
                         value={this.state.body}
                         onChange={this.handleBodyChange}
                     />
-                    <button>Submit</button>
+                    <button>Comment</button>
                 </form>
 
                 <div>
-                    <h3>{this.props.comments.length}</h3>
-                    {this.props.comments.map(comment => (
-                          <h1>{comment.body}</h1>  
+                    {this.props.comments.slice(0).reverse().map((comment,idx) => (
+                        <div className='comments-display'>{comment.body}</div>  
                     )) 
                     }
                 </div>

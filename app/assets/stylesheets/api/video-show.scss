@@ -5,6 +5,8 @@
 .video-display{
     flex: .8;
     object-fit: cover;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 24px 0;
 
 }
 
@@ -42,10 +44,16 @@
 .views-date{
     display: flex;
     color: slategray;
-    border-bottom: 1px solid slategrey;
+    border-bottom: 1px solid #E0E0E0;;
     padding-bottom: 20px;
 }
 
 .views-date > h1 {
     margin-right: 10px;
+}
+
+.comments-column{
+    margin-left:44px;
+    padding-top:24px;
+    
 }

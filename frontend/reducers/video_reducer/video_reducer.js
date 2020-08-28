@@ -11,6 +11,8 @@ const videoReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_VIDEOS:
+            const allVideos = action.videos;
+            console.log(allVideos);
             return action.videos;
         case RECEIVE_VIDEO:
             newState[action.video.id] = action.video;
@@ -18,7 +20,6 @@ const videoReducer = (oldState = {}, action) => {
         case REMOVE_VIDEO: 
             delete newState[action.videoId];
             return newState
-            
         default:
             return oldState;
     }

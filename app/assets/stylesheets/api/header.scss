@@ -10,7 +10,6 @@
     background:	white;
     justify-content: space-between;
     padding: 16px;
-    color: black;
     position: sticky;
     top:0;
     z-index: 100;
@@ -23,7 +22,8 @@
 
 .left-container > .logo {
  margin-left: 30px;
- font-size: 18px;
+ font-size: 22px;
+ font-family: Helvetica, sans-serif;
 }
 
 
@@ -32,15 +32,22 @@
     align-items: center;
     width: 45%;
     // border: 0.1px solid white;
-    background: grey;
+    background:#F8F8F8;
+    border-radius: 2px;
+    color:#828282 ;
+    border: 1px solid #D3D3D3;
 }
 
 
 .center-container > input {
     flex: 100%;
     height: 30px;
-    border: 1px solid silver;
+    border:none;
     outline: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    padding-left:12px;
+    font-size: 15px;
 }
 
 .search-icon {
@@ -51,26 +58,22 @@
     cursor: pointer;
     margin-left: 6px;
     border: none;
-}
-
-.right-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .right-container {
     display: flex;
     padding: 10px;
     position: relative;
+    margin-right: 44px;
 }
 
 
-.right-container .drop-down {
+.user-logo span .drop-down {
     display: none;
 }
-.right-container:hover .drop-down {
+.user-logo span:hover .drop-down {
     display: block;
     position: absolute;
    
@@ -79,30 +82,47 @@
 
 
 .login-btn {
-     font-size: px;
-     color: blue;
-     border: 1px solid blue;
+     font-size: 16px;
+     color:#0660D4;
+     border: 1px solid #cdd0d4;
      padding: 12px;
-     background-color: white;
-     font-family: Arial, Helvetica, sans-serif;
+     background-color:#fff;
+     font-family:Helvetica, sans-serif;
+     width:84px;
+     margin-left:-24px;
 }
 
+.logo-tv{
+  color: #F6511E;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: Helvetica, sans-serif;
+}
 .right-container > .user-logo {
 
-    box-sizing: border-box;
     border-radius: 50%;
-    border: 1px solid blue;
-    margin-left: 40px;
-    background-color: transparent;
+    height:34px;
+    width:34px;
+    margin-left: 44px;
+    background:#F6511E;
     cursor: pointer;
-    color: red;
+    color:#fff;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .userProfile{
-    font-size: 20px;
-    font-style: bold;
-    font-family: sans-serif;
+    font-size:18px;
+    font-weight: 500;
+    font-family:Helvetica;
+    text-align: center;
+    line-height: 0;
+    vertical-align: middle;
+    padding-top: 7px;
+    text-transform: uppercase;
+
 }
+
 
 .active, .user-logo:hover {
     cursor: pointer;
@@ -114,9 +134,13 @@
 
 .video-icon {
     position: relative;
-    margin-left: 200px;
     align-items: center;
     justify-content: center;
+    color:#606060;
+    width: 22px;
+    height: 22px;
+    padding-top:8px;
+    padding-right:20px;
 
 }
 
@@ -128,11 +152,10 @@
 .video-icon:hover .upload-link {
     display: block;
     position: absolute;
-    padding-top: 10px;
-    padding-right: 30px;
-    padding-left: 30px;
-    color: blue;
-    border: 1px solid grey;
-    align-items: center;
-    justify-content: center;
+    padding:14px; 
+    box-shadow: 0 6px 12px gray(0,0,0,0.9);
+    margin-left:-10px;
+    z-index: 5;
+    border: 1px solid #D3D3D3;
+    background: #EEEEEE;
 }

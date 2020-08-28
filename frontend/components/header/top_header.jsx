@@ -26,7 +26,7 @@ export default ({currentUser, logout}) => {
     : (
         <div className ='login-btn'>
 
-            <i className="far fa-user-circle"></i>
+            <span className="far fa-user-circle"></span>
             <Link className="btn" to="/login"> Log In</Link> 
                 
         </div>
@@ -36,7 +36,7 @@ export default ({currentUser, logout}) => {
         <header className='header-bar'>
             <div className= 'left-container'>
                     <MenuIcon /> 
-                <Link className='logo' to="/">SulluTV</Link>
+                <Link className='logo' to="/">Sullu<span className='logo-tv'>TV</span></Link>
             </div>
 
             <div className='center-container'>
@@ -46,18 +46,18 @@ export default ({currentUser, logout}) => {
                 <SearchIcon className='search-icon'/>
             </div>
 
-            <div className = 'video-icon'>
-                <VideoCallIcon className= 'video-logo'/>
-                    <div className = 'upload-link'>
+            <div className='right-container'>
+
+                <div className='video-icon'>
+                    <VideoCallIcon className='video-logo' />
+                    <div className='upload-link'>
                         <Link to='/upload'>Upload</Link>
                     </div>
-            </div>
-
-            <div className='right-container'>
+                </div>
                 
-                <span className ='user-logo'> 
-                    <h1>  {display}  </h1>
-                </span>
+                <div className ='user-logo'> 
+                    <span>  {display}  </span>
+                </div>
             </div>
         </header>
     );

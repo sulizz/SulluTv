@@ -5,7 +5,10 @@ const sessionErrorsReducer = (oldState = [], action) => {
 
     switch (action.type) {
         case RECEIVE_ERRORS:
-            return [...action.errors];
+            // if (action && action.errors ) {
+                return [...action.errors];
+            // }
+            // return [];
         
         case CLEAR_ERRORS:
             return [];

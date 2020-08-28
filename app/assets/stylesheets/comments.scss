@@ -1,0 +1,51 @@
+
+
+.comments-all{
+width: 78%;
+}
+.comments-form{
+    padding: 12px;
+}
+
+.comments-form textarea{
+width: 78%;
+padding: 12px;
+outline: none;
+border: none;
+border-bottom: 1px solid #3d3d3d;
+}
+
+
+.comments-display{
+    font-style: normal;
+    margin-top:24px;
+    padding: 12px;
+    font-size: 14px;
+    color:black;
+}
+
+.comments-numbers {
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.comments-form button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: Center;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background: rgb(197, 197, 197);
+    margin-bottom: 5px;
+
+}
+
+.comments-form button:hover {
+    background: blue;
+}

@@ -39,7 +39,7 @@ class VideoForm extends React.Component {
         formData.append('video[description]', this.state.description);
         formData.append('video[video]', this.state.file);
         formData.append('video[photo]', this.state.thumbnail);
-        this.props.uploadNewVideo(formData);
+        this.props.uploadNewVideo(formData)
         // .then(() => this.props.history.push('/'));
     }
     // params.require(: video).permit(: title, : description, : video, :photo )
@@ -50,33 +50,40 @@ class VideoForm extends React.Component {
             <div className= 'form-container'> 
 
                 <form className= 'from-items'onSubmit= {this.handleSubmit} >
-                    
-                    <label> Title</label>
-                    <input
-                        type='text'
-                        value = {this.state.title}
-                        onChange= {this.handleTitleChange}
-                    />
+                    <div className='input-box'>
+                        <label> Title</label>
+                        <input
+                            type='text'
+                            value = {this.state.title}
+                            onChange= {this.handleTitleChange}
+                        />
+                    </div>
                     <br></br>
-                    <label> description</label>
-                    <input
-                        type='text'
-                        value={this.state.description}
-                        onChange={this.handleDescriptionChange}
-                    />
+                    <div className='input-box'>
+                        <label> description</label>
+                        <input
+                            type='text'
+                            value={this.state.description}
+                            onChange={this.handleDescriptionChange}
+                        />
+                    </div>
                     <br></br>
-                    <label>Video File</label>
-                    <input
-                        type='file'
-                        onChange={this.handleFileChange}
-                    />
+                    <div className='input-box'> 
+                        <label>Video File</label>
+                        <input
+                            type='file'
+                            onChange={this.handleFileChange}
+                        />
+                    </div>
                     <br></br>
-                    <label>Thumbnail</label>
-                    <input
-                        type='file'
-                        onChange={this.handleThumbnailChange}
-                    />
-                    <button>Upload a Video</button>
+                    <div className='input-box'>
+                        <label>Thumbnail</label>
+                        <input
+                            type='file'
+                            onChange={this.handleThumbnailChange}
+                        />
+                    </div>
+                    <button className='edit'>Upload a Video</button>
                 </form>
 
             </div>

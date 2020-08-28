@@ -7,6 +7,13 @@ class VideoIndex extends React.Component {
         this.props.requestAllVideos()
     }
 
+    componentDidUpdate(oldProps) {
+        if (oldProps.video && oldProps.video.id != this.props.match.params.videoId) {
+            this.props.requestVideo(this.props.match.params.videoId);
+            window.scrollTo(0, 0);
+        }
+    }
+
     render() {
         const videos = this.props.videos.map(video => (
             <VideoIndexItem video={video} key={video.id} />
