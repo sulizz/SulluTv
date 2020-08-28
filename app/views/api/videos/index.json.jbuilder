@@ -5,6 +5,7 @@
         json.uploader_id video.user.id
         json.videoUrl url_for(video.video)
         json.photoUrl url_for(video.photo)
+        json.liked_by_current_user !!video.likes.find_by(liker_id: current_user.id)
     end
 end
 
@@ -28,3 +29,5 @@ end
 #                 user -- 
 #              }
 # }
+
+# json.extract! video, :likes_count, :liked_by_current_user

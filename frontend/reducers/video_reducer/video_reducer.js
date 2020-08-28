@@ -12,7 +12,6 @@ const videoReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_VIDEOS:
             return action.videos;
-
         case RECEIVE_VIDEO:
             newState[action.video.id] = action.video;
             return newState;

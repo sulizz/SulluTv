@@ -11,7 +11,7 @@ export const CLEAR_ERRORS ='CLEAR_ERRORS';
 
 export const receiveCurrentUser = user => ({
     type: RECEIVE_CURRENT_USER,
-    user //takes in user as payload  {user: user}
+    user   //takes in user as payload  {user: user}
 });
 
 // basically pass a msg on to reducer - logged the user out. 

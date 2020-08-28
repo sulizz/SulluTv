@@ -1,4 +1,6 @@
 import * as VideoAPIUtil from '../utils/videos_api_utils';
+import * as LikesAPIUtil from '../utils/like_api_utils';
+
 
 export const RECEIVE_VIDEOS = 'RECEIVE_VIDEOS';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
@@ -25,6 +27,8 @@ const receiveErrors = (errors) => ({
     type: RECEIVE_ERRORS,
     errors
 });
+
+
 
 export const clearErrors = () => ({
     type: CLEAR_ERRORS
@@ -63,5 +67,18 @@ export const deleteVideo = (videoId) => dispatch => (
     VideoAPIUtil.deleteVideo(videoId)
         .then(() => dispatch(removeVideo(videoId)))
     .fail(err => dispatch(receiveErrors(err.responseJSON)))
+        .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
+
+export const LikeVideo = id => dispatch => (
+    LikesAPIUtil.postLikeToVideo(id)
+        .then(video => dispatch(receiveVideo(video)))
+        .fail(err => dispatch(receiveErrors(err.responseJSON)))
+)
+
+export const unLikeVideo = id => dispatch => {
+    return LikesAPIUtil.deleteLikeFromVideo(id)
+        .then(video => dispatch(receiveVideo(video)))
+        .fail(err => dispatch(receiveErrors(err.responseJSON)));
+}
 

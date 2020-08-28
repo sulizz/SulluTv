@@ -9,10 +9,16 @@ class User < ApplicationRecord
 
     has_many :videos
     
-    has_many :likes 
+    has_many :likes, 
         primary_key: :id,
         foreign_key: :liker_id,
         class_name: :Like
+
+    has_many :comments, 
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Comment
+
     
     attr_reader :password
     #PERCS
