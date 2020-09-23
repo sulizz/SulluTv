@@ -15,6 +15,7 @@ class VideoShow extends React.Component {
     }
 
     componentDidUpdate(oldProps) {
+        // this.props.requestAllVideos();
         if (oldProps.video && oldProps.video.id != this.props.match.params.videoId) {
             this.props.requestVideo(this.props.match.params.videoId);
             window.scrollTo(0, 0);

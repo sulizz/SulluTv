@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
             username: 'DemoUser101',
             email: 'DemoUser101',
             password: 'DemoUser101'
-        })
+        })  
         .then(() => this.props.history.push('/')) //==> redirect on sucessfull login or signup 
     } 
 

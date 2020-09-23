@@ -55,7 +55,7 @@ class CommentIndex extends React.Component {
 
                 <div>
                     {this.props.comments.slice(0).reverse().map((comment,idx) => (
-                        <div className='comments-display'>{comment.body}</div>  
+                        <div className='comments-display'> {comment.body}</div>  
                     )) 
                     }
                 </div>
