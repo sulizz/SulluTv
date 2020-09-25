@@ -10,7 +10,7 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestVideo(this.props.match.params.videoId);
+        // this.props.requestVideo(this.props.match.params.videoId);
         this.props.requestAllVideos()
     }
 
