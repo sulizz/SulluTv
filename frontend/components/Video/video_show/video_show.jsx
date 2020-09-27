@@ -18,7 +18,7 @@ class VideoShow extends React.Component {
         // this.props.requestAllVideos();
         if (oldProps.video && oldProps.video.id != this.props.match.params.videoId) {
             this.props.requestVideo(this.props.match.params.videoId);
-            window.scrollTo(0, 0);
+            // window.scrollTo(0, 0);
         }
     }
 
@@ -50,7 +50,8 @@ class VideoShow extends React.Component {
             likeButtonText = "You like this";
             likeButtonAction = () => this.props.unLikeVideo(video.id);
         }
-        
+        // TODO work on the unlike feature
+
         // /rails/active_storage / blobs / eyJfcmFpbHMiOnsibWVzc -cool dog
         // /rails/active_storage / blobs / eyJfcmFpbHMiOnsibWVzc
 
