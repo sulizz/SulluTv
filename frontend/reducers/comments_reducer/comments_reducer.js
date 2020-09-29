@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_COMMENTS} from '../../actions/comment_actions'
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../../actions/comment_actions'
 import { RECEIVE_VIDEO } from '../../actions/video_actions'
 
 const CommentsReducer = (oldState = {}, action) => { 
@@ -14,7 +14,6 @@ const CommentsReducer = (oldState = {}, action) => {
             return newState
 
         case RECEIVE_VIDEO:
-
             if (action.video.comments) {
                 return action.video.comments;
             } else {

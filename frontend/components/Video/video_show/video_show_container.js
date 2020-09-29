@@ -13,13 +13,9 @@ const mapStateToProps = (state, ownProps) => {
     let video = state.entities.video[ownProps.match.params.videoId];
     let currentUser = state.session.currentUser
     let currentUserLike = state.entities.video.id;
-    console.log('inside container')
-    console.log(state)
     const videos = state.entities.video;
     const currentVideo = videos[ownProps.match.params.videoId];
 
-    console.log('currentVideo')
-    console.log(currentVideo)
     return {
         video: currentVideo,
         currentUser: currentUser
