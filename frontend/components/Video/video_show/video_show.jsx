@@ -8,7 +8,7 @@ class VideoShow extends React.Component {
     constructor(props){
         super(props);
     }
-
+ 
     componentDidMount() {
         // this.props.requestVideo(this.props.match.params.videoId);
         this.props.requestAllVideos()
@@ -18,15 +18,13 @@ class VideoShow extends React.Component {
         // this.props.requestAllVideos();
         if (oldProps.video && oldProps.video.id != this.props.match.params.videoId) {
             this.props.requestVideo(this.props.match.params.videoId);
-            // window.scrollTo(0, 0);
         }
     }
 
     render() {
 
         const { video, currentUser} = this.props
-        console.log('inside component')
-        console.log(video)
+
         if (!video) {
             return null;
         }
@@ -44,6 +42,7 @@ class VideoShow extends React.Component {
         //         Edit
         //     </div>
         // ): (<> </>)):();
+
         let likeButtonText = "You don't like this.";
         let likeButtonAction = () => this.props.LikeVideo(video.id);
         if (video.liked_by_current_user) {
@@ -57,8 +56,8 @@ class VideoShow extends React.Component {
 
         return (
 
-           <div>
-            <div className ='main-display'> 
+            <div>
+                <div className ='main-display'> 
                     <div className ='video-display'>
                         <video className='video_url' key={video.videoUrl} controls>
                                 <source src={video.videoUrl} type='video/mp4' />
@@ -66,7 +65,7 @@ class VideoShow extends React.Component {
                         <h1 className='title-text'> {video.title} </h1>
 
                         <div className='views-date'>
-                            <h1> {video.views } views </h1>
+                            <h1> { video.views } views </h1>
                             <h1>{formatDateTime(video.created_at)}</h1>
                             <p><strong>Likes: {video.likes}</strong></p>
                             <button onClick={likeButtonAction}>{likeButtonText}</button>
@@ -76,17 +75,22 @@ class VideoShow extends React.Component {
                             <h1 className='user-name'> {video.username}</h1>
                             {/* <h1> {video.username[0]}</h1> */}
                         </div>
+
                         <h1> {video.description} </h1> 
                         <Link to={`/edit/${video.id}`}>{display}</Link>
+                        
                     </div>
+
                     <div className='side-bar-display'>
                         <Link to={`/videos/${video.id}`}><VideoIndexItem /></Link>
                     </div>`
-                    
+                        
                 </div>
+                
                 <div className='comments-column'>
                     <CommentIndexContainer video={video} />
                 </div>
+                
             </div>
         )
     }

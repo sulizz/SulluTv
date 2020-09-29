@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import CommentIndexItem from './comment_index_item'
 
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            body: ''
+            body: '',
         }
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,10 +18,6 @@ class CommentIndex extends React.Component {
 
     componentDidMount () {
         this.props.requestVideo(this.props.video.id)
-    }
-
-    componentDidUpdate () {
-        
     }
 
     handleSubmit(e) {
@@ -35,16 +32,25 @@ class CommentIndex extends React.Component {
 
         if (!this.props.video) return null;
 
-        let allcomments = this.props.comments.map(comment => (
-            comment
-        ))
+        const comments = this.props.comments
+          .slice(0)
+          .reverse()
+          .map((comment) => (
+            <CommentIndexItem
+              comment={comment}
+              key={comment.id}
+              deleteComment = {this.props.deleteComment}
+            />
+          )); 
 
         return (
             <div className='comments-all'>
                 
                 <span className='comments-numbers'>{this.props.comments.length} Comments</span>
+                
                 <form onSubmit={this.handleSubmit} className='comments-form'>
-                    <textarea 
+                    <textarea className='test'
+                        
                         type='text'
                         placeholder='Comments here...'
                         value={this.state.body}
@@ -52,13 +58,7 @@ class CommentIndex extends React.Component {
                     />
                     <button>Comment</button>
                 </form>
-
-                <div>
-                    {this.props.comments.slice(0).reverse().map((comment,idx) => (
-                        <div className='comments-display'> {comment.body}</div>  
-                    )) 
-                    }
-                </div>
+                {comments}
             </div>
         )
     }
