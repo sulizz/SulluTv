@@ -9,25 +9,23 @@ import VideoFormContainer from './Video/video_form/video_form_container'
 import MainDisplay from './Main/main_display'
 import VideoShowContainer from './Video/video_show/video_show_container'
 import EditFormContainer from './Video/video_form/edit_form_container'
+import VideoIndexContainer from './Video/video_index/video_index_container'
+
 const App = () => (
+  <div>
     <div>
-        <div>
-            <Route path ='/' component={TopHeader}/>
-            <Route exact path='/' component={MainDisplay}/>
-            <Switch>
-                <Route exact path='/videos/:videoId' component={VideoShowContainer}/>
-                <Route exact path='/edit/:videoId' component={EditFormContainer}/>
-                <ProtectedRoute path='/upload' component={VideoFormContainer}/>
-                
+      <Route path="/" component={TopHeader} />
+      <Route exact path="/" component={VideoIndexContainer} />
+      <Switch>
+        <Route exact path="/videos/:videoId" component={VideoShowContainer} />
+        <Route exact path="/edit/:videoId" component={EditFormContainer} />
+        <ProtectedRoute path="/upload" component={VideoFormContainer} />
 
-                <AuthRoute path="/login" component={SignInFormContainer} /> 
-                <AuthRoute path='/signup' component={SignUpContainer} />
-            </Switch>
-            
-        
-        </div>
-
+        <AuthRoute path="/login" component={SignInFormContainer} />
+        <AuthRoute path="/signup" component={SignUpContainer} />
+      </Switch>
     </div>
+  </div>
 );
 
 export default App;

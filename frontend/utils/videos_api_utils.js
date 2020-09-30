@@ -5,12 +5,13 @@ export const fetchAllvideos = () => (
     })
 )
 
-export const fetchVideo = videoId => (
-    $.ajax({
+export const fetchVideo = videoId => {
+    debugger 
+    return $.ajax({
         method: 'GET',
         url: `api/videos/${videoId}`
     })
-)
+}
 
 export const createVideo = (video) => (
     $.ajax({

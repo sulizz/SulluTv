@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => ({
     // key: selector(state)
-    errors: state.errors.session,
+    errors: state.errors.session ? state.errors.session: {},
     formType: "Sign In",
     link: <Link to="/signup">Create account</Link>
 })

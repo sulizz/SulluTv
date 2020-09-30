@@ -11,11 +11,10 @@ import { Link } from 'react-router-dom'
 //pass in action that it would need to sign up a user
 
 const mapStateToProps = (state, ownProps) => ({
-
-    errors: state.errors.session,
-    formType: "Sign Up",
-    link: <Link to="/login">Sign in instead</Link>
-})
+  errors: state.errors.session ? state.errors.session : {},
+  formType: "Sign Up",
+  link: <Link to="/login">Sign in instead</Link>,
+});
 
 
 //return POJ with sign up as key.  

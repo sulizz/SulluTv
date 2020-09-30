@@ -40,7 +40,8 @@ class VideoForm extends React.Component {
         formData.append('video[video]', this.state.file);
         formData.append('video[photo]', this.state.thumbnail);
         this.props.uploadNewVideo(formData)
-        // .then(() => this.props.history.push('/'));
+        .then(() => this.props.requestAllVideos())
+        .then(() => this.props.history.push('/'));
     }
     // params.require(: video).permit(: title, : description, : video, :photo )
 
