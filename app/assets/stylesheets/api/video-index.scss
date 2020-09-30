@@ -13,15 +13,17 @@
 
 
 .videoItem {
-    // border: 1px solid black;
-    width:250px;
-    margin: 16px;
-    background: red;
+    width:270px;
+    height: 250px;
+    margin-bottom: 80px;
+    margin: 8px;
+    position: relative
 }
 
 .videoItem > .thumbnail_url:hover {
     cursor: pointer;
 }
+
  .video-thumbnail{
      height:140px;
      width: 250px;
@@ -29,7 +31,6 @@
  }
 
  .video-bottom-text {
-    display: flex; 
     padding-right: 30px;
     margin-top: 10px;
     
@@ -37,7 +38,10 @@
 
 .video-text {
     margin-left: 15px;
-    max-width: 235px;
+    position: absolute;
+    top: 153px;
+    left: 50px;
+    width: 160px;
 }
 
 .video-text > h2 {
@@ -45,9 +49,6 @@
     margin-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    // width: 250px; 
-    
-
 }
 
 .video-text > p {
@@ -55,13 +56,19 @@
     color: grey;
 }
 
-.video-bottom-text > .avatar {
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 30px;
     border: 1px solid black;
     border-radius: 50%;
     text-align: center;
     color:#666;
-    padding:8px;
-    padding-top: 16px;
+    padding:4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: 8px;
+    // padding-top: 16px;
     background: #fff;
 }
