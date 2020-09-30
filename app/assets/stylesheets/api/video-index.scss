@@ -30,6 +30,12 @@
 
  }
 
+//  .video-thumbnail:hover{
+//      height: 160px;
+//      width: 270px;
+//      z-index: 99;
+//  }
+
  .video-bottom-text {
     padding-right: 30px;
     margin-top: 10px;
@@ -57,9 +63,6 @@
 }
 
 .avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 30px;
     border: 1px solid black;
     border-radius: 50%;
@@ -69,6 +72,5 @@
     padding-top: 8px;
     padding-bottom: 8px;
     margin: 8px;
-    // padding-top: 16px;
     background: #fff;
 }

@@ -1,72 +1,21 @@
-.from-items{
-     position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 500px;
-    padding: 40px;
-    background: rgb(255,255,255);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-    border-radius: 10px;
-    border: 2px solid orange;
-    z-index: 3;
-    text-align: center;
-    height: 500px;
-
-}
-
-.from-items .input-box {
+.form-container {
     position: relative;
+    border: 1px solid red;
+    text-align: center;
+    padding: 200px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.from-items .input-box label {
+.form-container .header-text {
+    margin: 20px;
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-å
-.from-items .input-box .input {
-
-    outline: none;
-    border: none;
-    margin-bottom: 10px;
-    width: 95%;
-
-}
- 
-.from-items .input-box textarea {
-     outline: none;
-    border: none;
-     border-bottom: 1px solid black;
-     margin-bottom: 30px;
+    top:5%;
+    left:40%;
 }
 
-.from-items .edit {
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    margin-top: 100px;
-}
 
-.from-items .edit:hover {
-    cursor: pointer;
-    background-color: lightblue;
+.form-container > .form-items {
+    position: absolute;
+    top:20%;
+    left:40%;
 }
-
-.from-items .delete {
-     border: none;
-    outline: none;
-    padding: 10px 20px;
-     position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: Center;
-    font-size: 14px;
-    margin-top: 100px;
- }

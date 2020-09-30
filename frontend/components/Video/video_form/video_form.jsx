@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class VideoForm extends React.Component {
     constructor(props) {
         super(props)
@@ -38,7 +37,7 @@ class VideoForm extends React.Component {
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
         formData.append('video[video]', this.state.file);
-        formData.append('video[photo]', this.state.thumbnail);
+        formData.append('v ideo[photo]', this.state.thumbnail);
         this.props.uploadNewVideo(formData)
         .then(() => this.props.requestAllVideos())
         .then(() => this.props.history.push('/'));
@@ -50,7 +49,8 @@ class VideoForm extends React.Component {
         return (
             <div className= 'form-container'> 
 
-                <form className= 'from-items'onSubmit= {this.handleSubmit} >
+                <div className='header-text'>Upload A Video</div>
+                <form className= 'form-items'onSubmit= {this.handleSubmit} >
                     <div className='input-box'>
                         <label> Title</label>
                         <input
@@ -59,16 +59,16 @@ class VideoForm extends React.Component {
                             onChange= {this.handleTitleChange}
                         />
                     </div>
-                    <br></br>
+                    
                     <div className='input-box'>
                         <label> description</label>
-                        <input
+                        <textarea
                             type='text'
                             value={this.state.description}
                             onChange={this.handleDescriptionChange}
                         />
                     </div>
-                    <br></br>
+                    
                     <div className='input-box'> 
                         <label>Video File</label>
                         <input
@@ -76,7 +76,7 @@ class VideoForm extends React.Component {
                             onChange={this.handleFileChange}
                         />
                     </div>
-                    <br></br>
+                    
                     <div className='input-box'>
                         <label>Thumbnail</label>
                         <input
