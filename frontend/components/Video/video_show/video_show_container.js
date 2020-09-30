@@ -10,9 +10,9 @@ const mapStateToProps = (state, ownProps) => {
     //return { videos: Object.values(state.entities.video) }
     //get one video
 
-    let video = state.entities.video[ownProps.match.params.videoId];
+    // let video = state.entities.video[ownProps.match.params.videoId];
     let currentUser = state.session.currentUser
-    let currentUserLike = state.entities.video.id;
+    // let currentUserLike = state.entities.video.id;
     const videos = state.entities.video;
     const currentVideo = videos[ownProps.match.params.videoId];
 
@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
     requestVideo: (videoId) => dispatch(requestVideo(videoId)),
     requestAllVideos: () => dispatch(requestAllVideos()),
     LikeVideo: id => dispatch(LikeVideo(id)),
-    unLikeVideo: id => dispatch(unLikeVideo())
+    unLikeVideo: id => dispatch(unLikeVideo(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoShow);

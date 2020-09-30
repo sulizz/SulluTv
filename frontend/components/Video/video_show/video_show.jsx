@@ -37,20 +37,15 @@ class VideoShow extends React.Component {
             display = 'Edit'
         }
 
-        // const displayedit = currentUser.id ? (video.user_id === currentUser.id ?( 
-        //     <div>
-        //         Edit
-        //     </div>
-        // ): (<> </>)):();
-
         let likeButtonText = "You don't like this.";
+
         let likeButtonAction = () => this.props.LikeVideo(video.id);
+
         if (video.liked_by_current_user) {
             likeButtonText = "You like this";
             likeButtonAction = () => this.props.unLikeVideo(video.id);
         }
-        // TODO work on the unlike feature
-
+        
         // /rails/active_storage / blobs / eyJfcmFpbHMiOnsibWVzc -cool dog
         // /rails/active_storage / blobs / eyJfcmFpbHMiOnsibWVzc
 

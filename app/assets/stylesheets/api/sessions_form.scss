@@ -12,9 +12,15 @@
     border-radius: 10px;
     border: 2px solid orange;
     z-index: 3;
-
 }
 
+.session-form .errors {
+    color: black;
+    font-family: 'Lato', sans-serif;
+    z-index: 3;
+    background-color: yellow;
+    width: 95%;
+}
 //signUp
 .session-form h2 {
     
@@ -68,19 +74,13 @@
 .session-form .input-box input:focus ~ label
 // .session-form .input-box input:valid ~ label
  {
-    top: -18px;
+    top: -10px;
     left: -10px;
     font-size: 12px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     
 }
-
-// .session-form .input-box input:focus,
-// .session-form .input-box input:valid  {
-//     border-bottom: 1px solid red;
-// }
-
 
 .session-form button{
     

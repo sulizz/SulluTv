@@ -2,15 +2,6 @@ import React, { useState } from "react";
 
 const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
     
-    // const handleDelete = (e) => {
-    //     e.preventDefault();
-    //     deleteComment(comment.id);
-    // };
-
-    // const handleEdit = (e) => {
-    //     e.preventDefault();
-    // };
-
     const [isEditing, setIsEditing] = useState(false);
     const [commentBody, setCommentBody] = useState(comment.body)
 
