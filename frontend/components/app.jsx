@@ -15,7 +15,7 @@ const App = () => (
   <div>
     <div>
       <Route path="/" component={TopHeader} />
-      <Route exact path="/" component={VideoIndexContainer} />
+      <Route exact path="/" component={MainDisplay} />
       <Switch>
         <Route exact path="/videos/:videoId" component={VideoShowContainer} />
         <Route exact path="/edit/:videoId" component={EditFormContainer} />

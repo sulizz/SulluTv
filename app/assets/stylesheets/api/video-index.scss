@@ -14,8 +14,9 @@
 
 .videoItem {
     // border: 1px solid black;
-    width:260px;
+    width:250px;
     margin: 16px;
+    background: red;
 }
 
 .videoItem > .thumbnail_url:hover {
@@ -31,10 +32,12 @@
     display: flex; 
     padding-right: 30px;
     margin-top: 10px;
+    
  }
 
 .video-text {
     margin-left: 15px;
+    max-width: 235px;
 }
 
 .video-text > h2 {
@@ -42,6 +45,9 @@
     margin-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    // width: 250px; 
+    
+
 }
 
 .video-text > p {
