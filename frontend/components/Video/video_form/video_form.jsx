@@ -49,41 +49,40 @@ class VideoForm extends React.Component {
         return (
           <div className="form-container">
             <div className="header-text">Upload A Video</div>
-
             <form className="form-items" onSubmit={this.handleSubmit}>
+              <div className="form-input-box">
+                <label> Title</label>
+                <br></br>
+                <input
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.handleTitleChange}
+                />
+              </div>
 
-                <div className="form-input-box">
-                    <label> Title</label>
-                    <input
-                    type="text"
-                    value={this.state.title}
-                    onChange={this.handleTitleChange}
-                    />
-                </div>
+              <div className="form-input-box">
+                <label> Description</label>
+                <br></br>
+                <textarea
+                  type="text"
+                  value={this.state.description}
+                  onChange={this.handleDescriptionChange}
+                />
+              </div>
 
-                <div className="form-input-box">
-                    <label> Description</label>
-                    <textarea
-                    type="text"
-                    value={this.state.description}
-                    onChange={this.handleDescriptionChange}
-                    />
-                
-                </div>
+              <div className="data-input-box">
+                <label>Video File</label>
+                <br></br>
+                <input type="file" onChange={this.handleFileChange} />
+              </div>
 
-                
-                <div className="input-box">
-                    <label>Video File</label>
-                    <input type="file" onChange={this.handleFileChange} />
-                </div>
+              <div className="data-input-box">
+                <label>Thumbnail</label>
+                <br></br>
+                <input type="file" onChange={this.handleThumbnailChange} />
+              </div>
 
-                <div className="input-box">
-                    <label>Thumbnail</label>
-                    <input type="file" onChange={this.handleThumbnailChange} />
-                </div>
-            
-
-                <button className="edit">Upload a Video</button>
+              <button className="submit">Upload a Video</button>
             </form>
           </div>
         );
