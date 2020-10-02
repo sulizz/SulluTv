@@ -14,11 +14,21 @@
 .header-text{
     margin-left: 40%;
     font-size: 24px;
-    margin-top: 8px;
+    margin-top: 36px;
+    margin-bottom: 36px;
 }
 
 .submit {
     margin-left: 40%;
+    border: none;
+    outline: none;
+    padding: 16px;
+    border: 1px solid;
+}
+
+.submit:hover {
+    cursor: pointer;
+    border: 1px solid silver;
 }
 
 .form-container .form-items {
@@ -27,6 +37,7 @@
 }
 
 .form-input-box {    
+
     margin-left: 40px;
     margin-bottom: 40px;
 }
@@ -43,14 +54,16 @@
     padding: 10px;
     font-size: 16px;
     border: 1px solid lightgrey;
+    margin-top: 10px;
 }
 .form-input-box textarea {
     border-radius: 5px 5px 5px 5px;
     width: 80%;
-    height: 40px;
+    height: 80px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid lightgrey;
+    margin-top: 10px;
 }
 
 .form-input-box input:focus{

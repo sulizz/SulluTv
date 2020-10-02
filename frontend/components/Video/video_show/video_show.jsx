@@ -24,7 +24,6 @@ class VideoShow extends React.Component {
     render() {
 
         const { video, currentUser} = this.props
-
         if (!video) {
             return null;
         }
@@ -37,10 +36,9 @@ class VideoShow extends React.Component {
             display = 'Edit'
         }
 
+
         let likeButtonText = "You don't like this.";
-
         let likeButtonAction = () => this.props.LikeVideo(video.id);
-
         if (video.liked_by_current_user) {
             likeButtonText = "You like this";
             likeButtonAction = () => this.props.unLikeVideo(video.id);
@@ -72,6 +70,7 @@ class VideoShow extends React.Component {
                         </div>
 
                         <h1> {video.description} </h1> 
+                        
                         <Link to={`/edit/${video.id}`}>{display}</Link>
                         
                     </div>

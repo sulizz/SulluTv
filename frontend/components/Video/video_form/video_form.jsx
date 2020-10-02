@@ -37,7 +37,7 @@ class VideoForm extends React.Component {
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
         formData.append('video[video]', this.state.file);
-        formData.append('v ideo[photo]', this.state.thumbnail);
+        formData.append('video[photo]', this.state.thumbnail);
         this.props.uploadNewVideo(formData)
         .then(() => this.props.requestAllVideos())
         .then(() => this.props.history.push('/'));
@@ -49,6 +49,7 @@ class VideoForm extends React.Component {
         return (
           <div className="form-container">
             <div className="header-text">Upload A Video</div>
+            
             <form className="form-items" onSubmit={this.handleSubmit}>
               <div className="form-input-box">
                 <label> Title</label>

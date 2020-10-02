@@ -45,7 +45,6 @@ export const requestAllVideos = () => dispatch => {
     };
 
 export const requestVideo = (videoId) => dispatch => {
-    debugger
     return VideoAPIUtil.fetchVideo(videoId)
         .then(video => dispatch(receiveVideo(video)))
         .fail(err => dispatch(receiveErrors(err.responseJSON)))
