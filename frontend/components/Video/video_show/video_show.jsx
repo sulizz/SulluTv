@@ -2,6 +2,7 @@ import VideoIndexItem from '../video_index/video_index_container'
 import { Link, withRouter } from 'react-router-dom';
 import { formatDateTime } from '../../../utils/date_util'
 import CommentIndexContainer from '../../comments/comment_index_container'
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import React from 'react';
 class VideoShow extends React.Component {
@@ -48,45 +49,43 @@ class VideoShow extends React.Component {
         // /rails/active_storage / blobs / eyJfcmFpbHMiOnsibWVzc
 
         return (
-
             <div>
-                <div className ='main-display'> 
-                    <div className ='video-display'>
-                        <video className='video_url' key={video.videoUrl} controls>
-                                <source src={video.videoUrl} type='video/mp4' />
+                <div className="main-display">
+                    <div className="video-display">
+                        <video className="video_url" key={video.videoUrl} controls>
+                            <source src={video.videoUrl} type="video/mp4" />
                         </video>
-                        <h1 className='title-text'> {video.title} </h1>
-
-                        <div className='views-date'>
-                            <h1> { video.views } views </h1>
+                        <h1 className="title-text"> {video.title} </h1>
+                        <div className="views-date">
+                            <h1> {video.views} views </h1>
                             <h1>{formatDateTime(video.created_at)}</h1>
-                            <p><strong>Likes: {video.likes}</strong></p>
+                            <p>
+                                <strong>Likes: {video.likes}</strong>
+                            </p>
                             <button onClick={likeButtonAction}>{likeButtonText}</button>
+                            <MoreVertIcon/>
                         </div>
-
-                        <div className= 'user-info'> 
-                            <h1 className='user-name'> {video.username}</h1>
+                        <div className="user-info">
+                            <h1 className="user-name"> {video.username}</h1>
                             {/* <h1> {video.username[0]}</h1> */}
                         </div>
-
-                        <h1> {video.description} </h1> 
                         
+                        <h1> {video.description} </h1>
                         <Link to={`/edit/${video.id}`}>{display}</Link>
-                        
                     </div>
-
-                    <div className='side-bar-display'>
-                        <Link to={`/videos/${video.id}`}><VideoIndexItem /></Link>
-                    </div>`
-                        
+                    
+                    <div className="side-bar-display">
+                        <Link to={`/videos/${video.id}`}>
+                        <VideoIndexItem />
+                        </Link>
+                    </div>
                 </div>
-                
-                <div className='comments-column'>
+        
+                <div className="comments-column">
                     <CommentIndexContainer video={video} />
                 </div>
-                
             </div>
-        )
+        );
     }
     
 }
