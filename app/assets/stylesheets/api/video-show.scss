@@ -43,9 +43,28 @@
 
 .views-date{
     display: flex;
+    justify-content: space-between;
     color: slategray;
     border-bottom: 1px solid #E0E0E0;;
     padding-bottom: 20px;
+}
+
+.left{
+    display: flex;
+}
+
+.left >h1 {
+    padding-right: 8px;
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+}
+
+.middle span {
+    font-size: 16px;
+    padding-right: 4px;
 }
 
 .views-date > h1 {
@@ -57,3 +76,16 @@
     padding-top:24px;
     
 }
+
+.initial-Like{
+    border: none;
+    outline: none;
+    color: darkgrey;
+    font-size: 13px;
+}
+
+.after-liked{
+    color: blue;
+    font-size: 13px;
+}
+
