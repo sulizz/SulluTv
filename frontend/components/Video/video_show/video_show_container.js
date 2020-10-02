@@ -1,5 +1,11 @@
 import { connect } from 'react-redux';
-import { requestVideo, requestAllVideos, LikeVideo, unLikeVideo } from '../../../actions/video_actions';
+import {
+  requestVideo,
+  requestAllVideos,
+  LikeVideo,
+  unLikeVideo,
+  deleteVideo,
+} from "../../../actions/video_actions";
 import VideoShow from './video_show';
 
 //when the video is clicked on index render the display page
@@ -26,7 +32,8 @@ const mapDispatchToProps = (dispatch) => ({
     requestVideo: (videoId) => dispatch(requestVideo(videoId)),
     requestAllVideos: () => dispatch(requestAllVideos()),
     LikeVideo: id => dispatch(LikeVideo(id)),
-    unLikeVideo: id => dispatch(unLikeVideo(id))
+    unLikeVideo: id => dispatch(unLikeVideo(id)),
+    deleteVideo: videoId => dispatch(deleteVideo(videoId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoShow);

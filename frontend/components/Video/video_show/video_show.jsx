@@ -8,7 +8,8 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import React from 'react';
 class VideoShow extends React.Component {
     constructor(props){
-        super(props);
+		super(props);
+		this.handleDeleteSubmit = this.handleDeleteSubmit.bind(this);
     }
  
     componentDidMount() {
@@ -21,6 +22,12 @@ class VideoShow extends React.Component {
         if (oldProps.video && oldProps.video.id != this.props.match.params.videoId) {
             this.props.requestVideo(this.props.match.params.videoId);
         }
+	}
+	
+	handleDeleteSubmit(e) {
+        e.preventDefault();
+        this.props.deleteVideo(this.props.video.id)
+        .then(() => this.props.history.push('/'));
     }
 
     render() {
@@ -55,13 +62,22 @@ class VideoShow extends React.Component {
                   <div className="left">
                     <h1> {video.views} views </h1>
                     <h1>{formatDateTime(video.created_at)}</h1>
-                </div>
+                  </div>
 
                   <div className="middle">
                     <span onClick={likeButtonAction}>{likeButtonText}</span>
                     <span>{video.likes}</span>
                   </div>
-                    <MoreVertIcon />
+                  <MoreVertIcon className='right'/>
+                </div>
+                <div className='dropDown'>
+                	<Link to={`/edit/${video.id}`}>{display}</Link>
+                    <button
+                      onClick={this.handleDeleteSubmit}
+                      className="delete"
+                    >
+                      Delete Video
+                    </button>
                 </div>
 
                 <div className="user-info">
@@ -69,7 +85,6 @@ class VideoShow extends React.Component {
                 </div>
 
                 <h1> {video.description} </h1>
-                <Link to={`/edit/${video.id}`}>{display}</Link>
               </div>
 
               <div className="side-bar-display">
