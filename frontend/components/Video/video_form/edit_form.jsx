@@ -51,43 +51,40 @@ class EditForm extends React.Component {
 
     render () {
         return (
-            <>
-            
-            <div className='form-container'>
-                <form className='from-items' onSubmit={this.handleSubmit} >
-                        <div className='input-box'>
-                            <label> Title</label>
-                            <input
-                                className = 'input'
-                                type='text'
-                                value={this.state.title}
-                                onChange={this.handleTitleChange}
-                            />
-                    </div>
-                        <br></br>
-                        <div className='input-box'>
-                            <label> Description</label>
-                            <textarea
-                                type='text'
-                                value={this.state.description}
-                                onChange={this.handleDescriptionChange}
-                            />
-                        </div>
-                    <br></br>
-                        <div className='input-box'>
-                            <label>Thumbnail</label>
-                            <input
-                                type='file'
-                                onChange={this.handleThumbnailChange}
-                            />
-                        </div>
+          <div className="form-container">
+            <div className="header-text">Edit Video</div>
 
-                    <button className= 'edit'>Edit Video</button>
-                    <button onClick={this.handleDeleteSubmit} className='delete'>Delete Video</button>
-                </form>
-            </div>
-        </>
-        )
+            <form className="from-items" onSubmit={this.handleSubmit}>
+              <div className="form-input-box">
+                <label> Title</label>
+                <br></br>
+                <input
+                  className="input"
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.handleTitleChange}
+                />
+              </div>
+              <br></br>
+              <div className="form-input-box">
+                <label> Description</label>
+                <br></br>
+                <textarea
+                  type="text"
+                  value={this.state.description}
+                  onChange={this.handleDescriptionChange}
+                />
+              </div>
+              <br></br>
+              <div className="data-input-box">
+                <label>Thumbnail</label>
+                <input type="file" onChange={this.handleThumbnailChange} />
+              </div>
+
+              <button className="submit">Edit Video</button>
+            </form>
+          </div>
+        );
     }
 }
 
