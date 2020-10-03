@@ -25,7 +25,8 @@ class CommentIndex extends React.Component {
         this.props.createComment({
             body: this.state.body,
             video_id: this.props.video.id
-        });
+        })
+        .then(this.setState({body: ''}));
     }   
 
     render () {

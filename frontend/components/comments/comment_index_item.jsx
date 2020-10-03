@@ -31,11 +31,16 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
 
 
     return (
-      <div>
-        {comment.username[0].toUpperCase()}
-        {comment.username}
-        {comment.body}
-        {commentAuthor ? editComment : null}
+      <div className="comment-item">
+        <div>
+          <span className='logo'>{comment.username[0].toUpperCase()}</span>
+          {comment.username}
+          {comment.body}
+        </div>
+
+        <div>
+          {commentAuthor ? editComment : null}
+        </div>
       </div>
     );
 };

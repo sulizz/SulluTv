@@ -105,11 +105,6 @@
     margin-right: 10px;
 }
 
-.comments-column{
-    margin-left:44px;
-    padding-top:24px;
-    
-}
 
 .initial-Like{
     border: none;
@@ -122,4 +117,28 @@
     color: blue;
     font-size: 13px;
 }
+
+.comments-column{
+    margin-left:44px;
+    padding-top:24px;    
+}
+
+.comment-item{
+    padding: 4px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-item .logo {
+    border: 1px solid blue;
+    margin:14px;
+    padding:10px;
+    border-radius: 50%;
+    padding-left: 10px;
+}
+
+
 
