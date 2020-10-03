@@ -158,16 +158,13 @@
     padding-bottom: 4px;
 }
 
-.comment-icon{
-    position: relative;
-}
 
-.comment-drop-down{
-    display: none;
+.comment-edit .button{
+    padding: 4px;
+    margin-bottom: 4px;
+    border: 1px solid grey;
 }
-.comment-edit:hover .comment-drop-down{
-    display: block;
-    margin-right: 20px;
-    border: 1px solid red;
+.comment-edit .button:hover{
+    background: grey;
+    cursor: pointer;
 }
-
