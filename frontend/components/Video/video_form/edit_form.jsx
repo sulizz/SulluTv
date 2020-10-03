@@ -1,91 +1,98 @@
 import React from 'react';
-import video_form_container from './video_form_container';
 
 class EditForm extends React.Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            title: '',
-            description: '',
-            thumbnail: null
-        }
+    this.state = {
+      title: '',
+      description: "",
+      thumbnail: null,
+    };
 
-        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-        this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleThumbnailChange = this.handleThumbnailChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDeleteSubmit = this.handleDeleteSubmit.bind(this);
-    }
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleThumbnailChange = this.handleThumbnailChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDeleteSubmit = this.handleDeleteSubmit.bind(this);
+  }
 
-    handleTitleChange(e) {
-        this.setState({ title: e.currentTarget.value })
-    }
-    handleDescriptionChange(e) {
-        this.setState({ description: e.currentTarget.value })
-    }
+  componentDidMount() {
+    this.props.requestVideo(this.props.match.params.videoId);
+    // this.props.requestAllVideos();
+  }
 
-    handleThumbnailChange(e) {
-        this.setState({ thumbnail: e.currentTarget.files[0] })
-    }
+  handleTitleChange(e) {
+    this.setState({ title: e.currentTarget.value });
+  }
+  handleDescriptionChange(e) {
+    this.setState({ description: e.currentTarget.value });
+  }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const formData = new FormData();
-        // formData.append('video[id]', this.props.video.id);
-        formData.append('video[title]', this.state.title);
-        formData.append('video[description]', this.state.description);
-        formData.append('video[photo]', this.state.thumbnail);
-        this.props.editVideo(formData, this.props.video.id)
-            .then(() => this.props.history.push('/'));
-    }
+  handleThumbnailChange(e) {
+    this.setState({ thumbnail: e.currentTarget.files[0] });
+  }
 
-    handleDeleteSubmit(e) {
-        e.preventDefault();
-        this.props.deleteVideo(this.props.video.id)
-        .then(() => this.props.history.push('/'));
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    // formData.append('video[id]', this.props.video.id);
+    formData.append("video[title]", this.state.title);
+    formData.append("video[description]", this.state.description);
+    formData.append("video[photo]", this.state.thumbnail);
+    this.props
+      .editVideo(formData, this.props.video.id)
+      .then(() => this.props.history.push("/"));
+  }
 
-    // params.require(: video).permit(: title, : description, : photo)
+  handleDeleteSubmit(e) {
+    e.preventDefault();
+    this.props
+      .deleteVideo(this.props.video.id)
+      .then(() => this.props.history.push("/"));
+  }
 
+  // params.require(: video).permit(: title, : description, : photo)
 
-    render () {
-        return (
-          <div className="form-container">
-            <div className="header-text">Edit Video</div>
+  render() {
 
-            <form className="from-items" onSubmit={this.handleSubmit}>
-              <div className="form-input-box">
-                <label> Title</label>
-                <br></br>
-                <input
-                  className="input"
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.handleTitleChange}
-                />
-              </div>
-              <br></br>
-              <div className="form-input-box">
-                <label> Description</label>
-                <br></br>
-                <textarea
-                  type="text"
-                  value={this.state.description}
-                  onChange={this.handleDescriptionChange}
-                />
-              </div>
-              <br></br>
-              <div className="data-input-box">
-                <label>Thumbnail</label>
-                <input type="file" onChange={this.handleThumbnailChange} />
-              </div>
+    return (
+        
+      <div className="form-container">
+        <div className="header-text">Edit Video</div>
 
-              <button className="submit">Edit Video</button>
-            </form>
+        <form className="from-items" onSubmit={this.handleSubmit}>
+          <div className="form-input-box">
+            <label> Title</label>
+            <br></br>
+            <input
+              className="input"
+              type="text"
+              value={this.state.title}
+              onChange={this.handleTitleChange}
+            />
           </div>
-        );
-    }
+          <br></br>
+          <div className="form-input-box">
+            <label> Description</label>
+            <br></br>
+            <textarea
+              type="text"
+              value={this.state.description}
+              onChange={this.handleDescriptionChange}
+            />
+          </div>
+          <br></br>
+          <div className="data-input-box">
+            <label>Thumbnail</label>
+            <input type="file" onChange={this.handleThumbnailChange} />
+          </div>
+
+          <button className="submit">Edit Video</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default EditForm;
