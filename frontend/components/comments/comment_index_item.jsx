@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
     
@@ -18,14 +19,17 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
     const editComment = isEditing ? (
       <>
         <button onClick={() => setIsEditing(false)}>Cancel</button>
-        <textarea onChange={(event) => setCommentBody(event.target.value)}>{commentBody}</textarea>
+        <textarea onChange={(event) => setCommentBody(event.target.value)}>
+          {commentBody}
+        </textarea>
         <button onClick={handleEdit}>Submit</button>
       </>
     ) : (
-      <>
-        <button onClick={() => deleteComment(comment.id)}>Delete</button>
-        <button onClick={() => setIsEditing(true)}>Edit</button>
-      </>
+      <div className='comment-edit'>
+        <div className="button" onClick={() => deleteComment(comment.id)}>Delete</div>
+        <div className="button"  onClick={() => setIsEditing(true)}>Edit</div>
+        
+      </div>
     );
 
 
@@ -34,8 +38,10 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
       <div className="comment-item">
         <div>
           <span className="logo">{comment.username[0].toUpperCase()}</span>
-          <span>{comment.username}</span>
-          <span>{comment.body}</span>
+          <div className="name-comments">
+            <div className="comment-name">{comment.username}</div>
+            <div className="comment-comment">{comment.body}</div>
+          </div>
         </div>
 
         <div>{commentAuthor ? editComment : null}</div>
