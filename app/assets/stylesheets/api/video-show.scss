@@ -71,6 +71,36 @@
     position: relative;
 }
 
+.right button {
+    padding: none;
+    border: none;
+    cursor: pointer;
+    padding: 24px;
+}
+
+.right > .dropDown {
+    position: absolute;
+    display:none;
+    border: 1px solid silver;
+    // padding: 10px;
+    background: lightgray;
+}
+
+.right:hover .dropDown {
+    display: block;
+}
+
+.edit-word{
+    padding: 16px;
+}
+
+.edit-button:hover{
+    border: 1px solid silver;
+}
+.delete-button:hover{
+    border: 1px solid silver;
+}
+
 .views-date > h1 {
     margin-right: 10px;
 }

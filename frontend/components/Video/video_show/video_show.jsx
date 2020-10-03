@@ -37,9 +37,13 @@ class VideoShow extends React.Component {
             return null;
         }
 
-        let display;
-        if (currentUser.id === video.uploader_id) {
-            display = 'Edit'
+		let display;
+		
+		if (!currentUser) {
+			display = "";
+		}
+        else if (currentUser.id === video.uploader_id) {
+            display = <span className='edit-word'>Edit</span>
         }
 
         let likeButtonText = <ThumbUpAltIcon className='initial-Like'/>;
@@ -57,7 +61,7 @@ class VideoShow extends React.Component {
                   <source src={video.videoUrl} type="video/mp4" />
                 </video>
                 <h1 className="title-text"> {video.title} </h1>
-
+                
                 <div className="views-date">
                   <div className="left">
                     <h1> {video.views} views </h1>
@@ -68,22 +72,25 @@ class VideoShow extends React.Component {
                     <span onClick={likeButtonAction}>{likeButtonText}</span>
                     <span>{video.likes}</span>
                   </div>
-                  <MoreVertIcon className='right'/>
-                </div>
-                <div className='dropDown'>
-                	<Link to={`/edit/${video.id}`}>{display}</Link>
-                    <button
-                      onClick={this.handleDeleteSubmit}
-                      className="delete"
-                    >
-                      Delete Video
-                    </button>
-                </div>
+                  <div className="right">
+                    <MoreVertIcon />
 
+                    <div className="dropDown">
+                      <Link to={`/edit/${video.id}`}>
+                        <button className="edit-button">{display}</button>
+                      </Link>
+                      <button
+                        onClick={this.handleDeleteSubmit}
+                        className="delete-button"
+                      >
+                        Delete Video
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <div className="user-info">
                   <h1 className="user-name"> {video.username}</h1>
                 </div>
-
                 <h1> {video.description} </h1>
               </div>
 
