@@ -5,9 +5,6 @@ json.photoUrl url_for(@video.photo)
 json.uploader_id @video.user.id
 json.likes @video.likes.count
 
-json.liked_by_current_user !!@video.likes.find_by(liker_id: current_user.id)
-
-
 json.comments do
     @video.comments.each do |comment|
         json.set! comment.id do
@@ -16,6 +13,10 @@ json.comments do
         end
     end
 end
+
+json.liked_by_current_user !!@video.likes.find_by(liker_id: current_user.id)
+
+
 
 
 
