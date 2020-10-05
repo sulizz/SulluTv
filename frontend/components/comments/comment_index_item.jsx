@@ -19,9 +19,9 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
     const editComment = isEditing ? (
       <>
         <button onClick={() => setIsEditing(false)}>Cancel</button>
-        <textarea onChange={(event) => setCommentBody(event.target.value)}>
+        <input onChange={(event) => setCommentBody(event.target.value)}/>
           {commentBody}
-        </textarea>
+        
         <button onClick={handleEdit}>Submit</button>
       </>
     ) : (
