@@ -164,7 +164,77 @@
     margin-bottom: 4px;
     border: 1px solid grey;
 }
+.comment-edit .modal-button{
+    padding: 4px;
+    margin-bottom: 4px;
+    border: 1px solid grey;
+}
+
 .comment-edit .button:hover{
     background: grey;
     cursor: pointer;
+}
+.comment-edit .modal-button:hover{
+    background: grey;
+    cursor: pointer;
+}
+
+.edit-comment-box{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 95%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.modal {
+    // display: none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    // overflow: auto;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 55% 4%; 
+    padding: 30px;
+    width: 80%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.6), 0 5px 8px 0 rgba(0,0,0,0.6);
+}
+
+.close-modal{
+    border:none;
+    outline:none;
+    background-color: transparent;
+    color: #ccc;
+    float:right;
+    top:0;
+    left:0;
+    font-size: 20px;
+}
+
+.close-modal:hover {
+    color: red;
+    cursor: pointer;
+}
+.submit-modal:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.submit-modal{
+     border:none;
+    outline:none;
+    background-color: lightgray;
+    // background-color: transparent;
+    font-size: 20px;
+    padding: 8px;
+    margin-top: 8px;
+    float: center;
+    margin-left: 40%;
 }

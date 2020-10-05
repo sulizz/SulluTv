@@ -17,17 +17,19 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
     const commentAuthor = (currentUser.id === comment.user_id)
 
     const editComment = isEditing ? (
-      <>
-        <button onClick={() => setIsEditing(false)}>Cancel</button>
-        <input onChange={(event) => setCommentBody(event.target.value)}/>
-          {commentBody}
-        
-        <button onClick={handleEdit}>Submit</button>
-      </>
+      <div className='modal'>
+        <div className='modal-content'>
+          <textarea  className='edit-comment-box'onChange={(event) => setCommentBody(event.target.value)}>
+            {commentBody}
+          </textarea>
+          <button className='close-modal' onClick={() => setIsEditing(false)}>X</button>
+          <button className='submit-modal'onClick={handleEdit}>Submit</button>
+        </div>
+      </div>
     ) : (
       <div className='comment-edit'>
         <div className="button" onClick={() => deleteComment(comment.id)}>Delete</div>
-        <div className="button"  onClick={() => setIsEditing(true)}>Edit</div>
+        <div className="modal-button"  onClick={() => setIsEditing(true)}>Edit</div>
         
       </div>
     );
