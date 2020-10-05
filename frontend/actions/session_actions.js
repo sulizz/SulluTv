@@ -38,22 +38,25 @@ export const clearErrors = () => ({
 
 //postUser is a ajax request that will return a promise to us
 //if we sucessfully receive a user, we are going to dispatch our action creator invoking it. 
-export const signup = formUser => dispatch => postUser(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)))
-    .fail(err => dispatch(receiveErrors(err.responseJSON)));
+export const signup = (formUser) => (dispatch) =>
+  postUser(formUser)
+    .then((user) => dispatch(receiveCurrentUser(user)))
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)));
 
 //takes in user obj from form and from thunk middleware it will receive dispatch
 //upon sucessfull login -- we want the user obj we got from backend and dispatch receiveCurrentUser with the user we got back
-export const login = formUser => dispatch => postSession(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)))
-    .fail(err => dispatch(receiveErrors(err.responseJSON)));
+export const login = (formUser) => (dispatch) =>
+  postSession(formUser)
+    .then((user) => dispatch(receiveCurrentUser(user)))
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)));
 
 // export const loginDemo = formUser => dispatch => getDemoUser(formUser)
 //     .then(user => dispatch(receiveCurrentUser(user)))
 //     .fail(err => dispatch(receiveErrors(err.responseJSON)));
     
 //upon sucessful deletetion, it will call a callback which dispatches logoutCurrentUser.
-export const logout = () => dispatch => deleteSession()
+export const logout = () => (dispatch) =>
+  deleteSession()
     .then(() => dispatch(logoutCurrentUser()))
-    .fail(err => dispatch(receiveErrors(err.responseJSON)));
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)));
 

@@ -40,7 +40,7 @@ class VideoShow extends React.Component {
 		let display;
 		
 		if (!currentUser) {
-			display = "";
+			display = null;
 		}
         else if (currentUser.id === video.uploader_id) {
             display = <span className='edit-word'>Edit</span>
@@ -62,6 +62,7 @@ class VideoShow extends React.Component {
                 </video>
                 <h1 className="title-text"> {video.title} </h1>
                 
+
                 <div className="views-date">
                   <div className="left">
                     <h1> {video.views} views </h1>
@@ -91,7 +92,7 @@ class VideoShow extends React.Component {
                 <div className="user-info">
                   <h1 className="user-name"> {video.username}</h1>
                 </div>
-                <h1> {video.description} </h1>
+                <div className='description'> {video.description} </div>
               </div>
 
               <div className="side-bar-display">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
+const CommentIndexItem = ({ comment, deleteComment, updateComment, currentUser }) => {
     
     const [isEditing, setIsEditing] = useState(false);
     const [commentBody, setCommentBody] = useState(comment.body)
@@ -13,8 +13,16 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
             body: commentBody
         }); 
     } 
-    
-    const commentAuthor = (currentUser.id === comment.user_id)
+
+    // let currentUser = state.session.currentUser;
+
+    let commentAuthor = false;
+    if (currentUser === null) {
+      commentAuthor = false;
+    }else if(currentUser.id === comment.user_id) {
+      commentAuthor = true;
+    }
+
 
     const editComment = isEditing ? (
       <div className='modal'>
@@ -28,8 +36,8 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
       </div>
     ) : (
       <div className='comment-edit'>
-        <div className="button" onClick={() => deleteComment(comment.id)}>Delete</div>
-        <div className="modal-button"  onClick={() => setIsEditing(true)}>Edit</div>
+        <span className="button" onClick={() => deleteComment(comment.id)}>Delete</span>
+        <span className="modal-button"  onClick={() => setIsEditing(true)}>Edit</span>
         
       </div>
     );
@@ -45,8 +53,8 @@ const CommentIndexItem = ({ comment, deleteComment, updateComment }) => {
             <div className="comment-comment">{comment.body}</div>
           </div>
         </div>
-
-        <div>{commentAuthor ? editComment : null}</div>
+        
+        <div>{ commentAuthor ? editComment : null}</div>
       </div>
     );
 };

@@ -1,9 +1,5 @@
 import {RECEIVE_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO} from '../../actions/video_actions'
 
-// const _nullState = {
-//     currentVideo: null
-// };
-
 const videoReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
 

@@ -40,7 +40,6 @@
     
 }
 
-
 .views-date{
     display: flex;
     justify-content: space-between;
@@ -55,6 +54,10 @@
 
 .left >h1 {
     padding-right: 8px;
+}
+
+.views-date > h1 {
+    margin-right: 10px;
 }
 
 .middle {
@@ -101,10 +104,11 @@
     border: 1px solid silver;
 }
 
-.views-date > h1 {
-    margin-right: 10px;
+.description{
+    border-bottom: 1px solid silver;
+    padding-bottom: 17px;
+    position: relative;
 }
-
 
 .initial-Like{
     border: none;
@@ -119,8 +123,34 @@
 }
 
 .comments-column{
+    position: absolute;
     margin-left:44px;
-    padding-top:24px;    
+    // padding-top:90px;
+    width:75%;
+    left: 0;
+    top:120%;    
+}
+
+.log-in-info{
+    position: absolute;
+    margin: none;
+    border:none;
+    left: 40%;
+    top:-10%;
+    font-family: serif;
+    font-size: 18px;
+    padding: 12px;
+    
+}
+
+.comments-numbers{
+    font-size: 20px;
+    font-family: serif;
+    position: relative;
+}
+
+.comments-form{
+    width: 90%;
 }
 
 .comment-item{
@@ -132,6 +162,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .comment-item .logo {
@@ -158,15 +189,25 @@
     padding-bottom: 4px;
 }
 
+.comment-edit{
+    position: absolute;
+    top:85%;
+    left:8%;
+
+}
+
 
 .comment-edit .button{
     padding: 4px;
     margin-bottom: 4px;
+    background-color: lightblue;
+
     border: 1px solid grey;
 }
 .comment-edit .modal-button{
     padding: 4px;
     margin-bottom: 4px;
+    background-color: lightblue;
     border: 1px solid grey;
 }
 
@@ -182,7 +223,7 @@
 .edit-comment-box{
     border: none;
     border-bottom: 1px solid black;
-    width: 95%;
+    width: 90%;
     padding-top: 15px;
     padding-bottom: 15px;
 }

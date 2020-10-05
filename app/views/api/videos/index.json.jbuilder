@@ -7,7 +7,7 @@
         json.photoUrl url_for(video.photo)
 
         json.likes video.likes.count
-        json.liked_by_current_user !!video.likes.find_by(liker_id: current_user ? current_user.id : 36)
+        json.liked_by_current_user !!video.likes.find_by(liker_id: current_user)
     end
 end
 

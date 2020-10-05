@@ -1,5 +1,7 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item'
+import { Link, withRouter } from "react-router-dom";
+
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -19,7 +21,7 @@ class CommentIndex extends React.Component {
     componentDidMount () {
         this.props.requestVideo(this.props.video.id)
     }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment({
@@ -33,6 +35,13 @@ class CommentIndex extends React.Component {
 
         if (!this.props.video) return null;
 
+        let commentAuthor = false;
+        if (this.props.currentUser === null) {
+          commentAuthor = false;
+        } else {
+          commentAuthor = true;
+        }
+
         const comments = this.props.comments
           .slice(0)
           .reverse()
@@ -41,28 +50,36 @@ class CommentIndex extends React.Component {
               comment={comment}
               key={comment.id}
               deleteComment={this.props.deleteComment}
-              updateComment = {this.props.updateComment}
+              updateComment={this.props.updateComment}
+              currentUser={this.props.currentUser}
             />
           )); 
 
         return (
-            <div className='comments-all'>
-                
-                <span className='comments-numbers'>{this.props.comments.length} Comments</span>
-                
-                <form onSubmit={this.handleSubmit} className='comments-form'>
-                    <textarea className='test'
-                        
-                        type='text'
-                        placeholder='Comments here...'
-                        value={this.state.body}
-                        onChange={this.handleBodyChange}
-                    />
-                    <button>Comment</button>
-                </form>
-                {comments}
-            </div>
-        )
+          <div className="comments-form">
+            <span className="comments-numbers">
+              {this.props.comments.length} Comments
+            </span>
+            {commentAuthor ? (
+              <form onSubmit={this.handleSubmit} className="comments-form">
+                <textarea
+                  className="test"
+                  type="text"
+                  placeholder="Comments here..."
+                  value={this.state.body}
+                  onChange={this.handleBodyChange}
+                />
+                <button>Comment</button>
+              </form>
+            ) : (
+              <button className="log-in-info">
+                <Link to="/login">Log In to comment</Link>
+              </button>
+            )}
+
+            {comments}
+          </div>
+        );
     }
 }
 

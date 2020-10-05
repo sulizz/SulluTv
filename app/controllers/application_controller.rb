@@ -7,10 +7,11 @@ class ApplicationController < ActionController::Base
         @current_user = User.find_by(session_token: session[:session_token])
     end
 
-    # def require_logged_in
-    #     if !logged_in? 
-    #         redirect_to new_session_ur
-    # end
+    def require_logged_in
+        if !logged_in? 
+            render json: ['please log in'], status: 422
+        end
+    end
 
     def login(user)
         user.reset_session_token!
