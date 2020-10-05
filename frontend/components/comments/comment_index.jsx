@@ -72,9 +72,9 @@ class CommentIndex extends React.Component {
                 <button>Comment</button>
               </form>
             ) : (
-              <button className="log-in-info">
+              <span className="log-in-info">
                 <Link to="/login">Log In to comment</Link>
-              </button>
+              </span>
             )}
 
             {comments}

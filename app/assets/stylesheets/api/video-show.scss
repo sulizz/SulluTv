@@ -140,7 +140,11 @@
     font-family: serif;
     font-size: 18px;
     padding: 12px;
-    
+    background-color: lightgrey;
+}
+
+.log-in-info:hover{
+    border: 1px solid silver;
 }
 
 .comments-numbers{
