@@ -43,7 +43,19 @@ class VideoShow extends React.Component {
         display = null;
       }
       else if (currentUser.id === video.uploader_id) {
-          display = <span className='edit-word'>Edit</span>
+          display = (
+            <div className="dropDown">
+              <Link to={`/edit/${video.id}`}>
+                <button className="edit-button">Edit</button>
+              </Link>
+              <button
+                onClick={this.handleDeleteSubmit}
+                className="delete-button"
+              >
+                Delete Video
+              </button>
+            </div>
+          );
       }
 
       let likeButtonText = <ThumbUpAltIcon className='initial-Like'/>;
@@ -75,17 +87,7 @@ class VideoShow extends React.Component {
                 <div className="right">
                   <MoreVertIcon />
                   {currentUser ? (
-                    <div className="dropDown">
-                      <Link to={`/edit/${video.id}`}>
-                        <button className="edit-button">{display}</button>
-                      </Link>
-                      <button
-                        onClick={this.handleDeleteSubmit}
-                        className="delete-button"
-                      >
-                        Delete Video
-                      </button>
-                    </div>
+                    <>{display}</>
                   ) : (
                     <></>
                   )}

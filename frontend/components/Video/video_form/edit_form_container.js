@@ -7,7 +7,9 @@ const mapStateToProps = (state, ownProps) => {
 
     let video = state.entities.video[ownProps.match.params.videoId]
 
-    return {video:video}
+    return { 
+      video:video
+    }
 }
 
 const mapDispatchToProps = (dispatch) => ({

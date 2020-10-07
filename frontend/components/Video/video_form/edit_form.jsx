@@ -21,6 +21,11 @@ class EditForm extends React.Component {
     this.props.requestVideo(this.props.match.params.videoId);
     // this.props.requestAllVideos();
   }
+  // componentWillMount() {
+  //   this.props.requestVideo(this.props.match.params.videoId);
+  //   // this.props.requestAllVideos();
+  //   this.setState({ title: this.props.video.title });
+  // }
 
   handleTitleChange(e) {
     this.setState({ title: e.currentTarget.value });
@@ -57,7 +62,6 @@ class EditForm extends React.Component {
   render() {
 
     return (
-        
       <div className="form-container">
         <div className="header-text">Edit Video</div>
 
@@ -79,6 +83,7 @@ class EditForm extends React.Component {
             <textarea
               type="text"
               value={this.state.description}
+              // placeholder={this.props.video.description}
               onChange={this.handleDescriptionChange}
             />
           </div>
