@@ -9,6 +9,16 @@
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+     <meta property="og:title" content="Sullu TV" />
+     <meta property='og:image' content="<%= image_url('project.png') %>"/>
+     <meta property="og:description"
+       content="A brief description of your project."
+     />
+     <meta property="og:url"
+       content="http://projectname.herokuapp.com/"
+     />
+
     
     <% if current_user %>
         <script>
