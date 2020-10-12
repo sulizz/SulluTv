@@ -104,11 +104,11 @@ class VideoShow extends React.Component {
                 <VideoIndexItem />
               </Link>
             </div>
+			<div className="comments-column">
+				<CommentIndexContainer video={video} />
+			</div>
           </div>
 
-          <div className="comments-column">
-            <CommentIndexContainer video={video} />
-          </div>
         </div>
       );
     }
