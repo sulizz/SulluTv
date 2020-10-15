@@ -78,17 +78,17 @@
     padding: none;
     border: none;
     cursor: pointer;
-    padding: 24px;
+    // padding: 24px;
 }
 
 .right > .dropDown {
     position: absolute;
     display:none;
     border: 1px solid silver;
-    // padding: 10px;
     background: lightgray;
     left: -22px;
     top:20px;
+    z-index:99;
 }
 
 .right:hover .dropDown {
@@ -96,11 +96,20 @@
 }
 
 .edit-word{
-    padding: 16px;
+    padding: 24px;
+}
+
+.edit-button{
+    padding: 24px;
+}
+
+.delete-button{
+    padding: 15px;
 }
 
 .edit-button:hover{
     border: 1px solid silver;
+    
 }
 .delete-button:hover{
     border: 1px solid silver;
