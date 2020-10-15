@@ -39,12 +39,12 @@ export default ({currentUser, logout}) => {
                 <Link className='logo' to="/">Sullu<span className='logo-tv'>TV</span></Link>
             </div>
 
-            <div className='center-container'>
+            {/* <div className='center-container'>
                 
                 <input placeholder="Search" type="text"
                  type='text' />
                 <SearchIcon className='search-icon'/>
-            </div>
+            </div> */}
 
             <div className='right-container'>
 
