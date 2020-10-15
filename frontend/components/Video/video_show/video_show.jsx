@@ -99,7 +99,7 @@ class VideoShow extends React.Component {
             <div className="comments-column">
               <CommentIndexContainer video={video} />
             </div>
-			
+
           </div>
 
           <div className="side-bar-display">

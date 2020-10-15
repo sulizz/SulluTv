@@ -134,7 +134,6 @@
 // }
 
 .log-in-info{
-    position: absolute;
     margin: none;
     border:none;
     left: 40%;
@@ -172,11 +171,13 @@
 }
 
 .comment-item .logo {
-    border: 1px solid blue;
-    margin:14px;
-    padding:10px;
-    border-radius: 50%;
-    padding-left: 10px;
+
+    padding:12px;
+    padding-left: -8px;
+    padding-right: -8px;
+    border-radius: 55%;
+    background-color: #f6511e;
+    color: white;
 }
 
 .name-comments{
@@ -193,6 +194,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     padding-bottom: 4px;
+    color: #f6511e;
 }
 
 .comment-edit{
